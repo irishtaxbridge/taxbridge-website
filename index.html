@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaxBridge | Smart Tax Solutions in Ireland</title>
+    <meta name="description"
+        content="Professional tax consultancy in Ireland for individuals and businesses of every size. Expert advice on Form 12, Bookkeeping, and more.">
+    <script src="theme.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="topbar">
+        <div class="container topbar-inner">
+            <span class="topbar-note"><i class="fa-solid fa-landmark"></i> Budget 2027: <a href="blog-budget-2027.html">see what has changed for you</a></span>
+            <div class="topbar-links">
+                <a href="tel:+353899777898"><i class="fa-solid fa-phone"></i> +353 89 977 7898</a>
+                <a href="https://wa.me/353899777898" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                <a href="mailto:info@taxbridge.ie" class="tb-email"><i class="fa-regular fa-envelope"></i> info@taxbridge.ie</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo" aria-label="TaxBridge home">
+                <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 18h20"/><path d="M4 18v-4"/><path d="M20 18v-4"/><path d="M3 14c3-6 15-6 18 0"/><path d="M9 18v-4.5"/><path d="M15 18v-4.5"/><path d="M12 18v-6"/></svg></span>
+                <span class="logo-text"><span class="logo-name">Tax<em>Bridge</em></span><span class="logo-tag">Ireland</span></span>
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#why-choose-us" class="nav-link">Why Choose Us</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="#contact" class="nav-link btn-nav">Contact</a></li>
+                </ul>
+                <div class="header-actions">
+                    <button class="theme-toggle" type="button" aria-label="Switch between light and dark mode" title="Light / dark mode"><i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i></button>
+                    <button class="mobile-menu-btn" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero" style="--photo:url(images/hero-dublin.jpg)">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="eyebrow">Tax consultancy &middot; Ireland</span>
+                <h1>Smart tax solutions for individuals and <em>businesses</em> in Ireland</h1>
+                <p>Stress-free tax filing, full compliance, and clear advice tailored to your needs. Stop worrying about
+                    Revenue forms and start saving.</p>
+                <div class="hero-actions">
+                    <a href="#claim" class="btn btn-gold">Claim your refund <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#services" class="btn btn-ghost-light">Explore services</a>
+                </div>
+                <ul class="hero-trust">
+                    <li><i class="fa-solid fa-shield-halved"></i> No Refund &ndash; No Fee</li>
+                    <li><i class="fa-solid fa-clock-rotate-left"></i> 4-year tax review</li>
+                    <li><i class="fa-solid fa-reply"></i> Reply within 1 business day</li>
+                </ul>
+            </div>
+            <div class="hero-form-container" id="claim">
+                <div class="hero-form-wrapper">
+                    <p class="form-card-eyebrow">Free refund check</p>
+                    <h2>Claim your tax refund today</h2>
+                    <p>Our experts will contact you soon.</p>
+                    <form id="leadFormHero" class="hero-form"
+                        data-whatsapp="New Tax Refund Claim - TaxBridge Website">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name_first_hero">First name *</label>
+                                <input type="text" id="name_first_hero" name="Name_First" required
+                                    placeholder="First name" maxlength="255">
+                            </div>
+                            <div class="form-group">
+                                <label for="name_last_hero">Last name *</label>
+                                <input type="text" id="name_last_hero" name="Name_Last" required placeholder="Last name"
+                                    maxlength="255">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email_hero">Email *</label>
+                            <input type="email" id="email_hero" name="Email" required placeholder="your@email.com"
+                                maxlength="255">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone_hero">Phone</label>
+                            <input type="tel" id="phone_hero" name="PhoneNumber_countrycode" placeholder="08x xxx xxxx"
+                                maxlength="20">
+                        </div>
+                        <div class="form-group">
+                            <label for="service_hero">Service *</label>
+                            <select id="service_hero" name="Dropdown" required>
+                                <option value="" selected>Select a service</option>
+                                <option value="FORM 12">Form 12 Submission</option>
+                                <option value="COMPANY BOOKKEEPING">Company Bookkeeping</option>
+                                <option value="SELF-ASSESSMENT (FORM 11)">Self-Assessment (Form 11)</option>
+                                <option value="PAYE &amp; PAYROLL SUPPORT">PAYE &amp; Payroll Support</option>
+                                <option value="VAT REGISTRATION &amp; RETURNS">VAT Registration &amp; Returns</option>
+                                <option value="BUSINESS START-UP ADVICE">Business Start-Up Advice</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message_hero">Additional info (optional)</label>
+                            <textarea id="message_hero" name="MultiLine" rows="2"
+                                placeholder="E.g. medical expenses, rent, working from home" maxlength="65535"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">Submit via WhatsApp <i class="fa-brands fa-whatsapp"></i></button>
+                        <p class="form-note"><i class="fa-brands fa-whatsapp"></i> Opens WhatsApp with your details ready to send. See our <a href="privacy.html">Privacy Policy</a>.</p>
+                        <div id="formMessageHero" class="form-message"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">What we do</span>
+                <h2 class="section-title">Our services</h2>
+                <p>From a single Form 12 to the full financial running of your company, we take care of the Revenue side so you don't have to.</p>
+            </div>
+            <div class="services-grid">
+                <a href="form12.html" class="service-card has-media">
+                    <div class="service-media"><img src="images/form12.jpg" alt="Tax forms with a calculator and pen" loading="lazy"><span class="service-num">01</span></div>
+                    <div class="service-body">
+                        <span class="service-icon"><i class="fa-solid fa-file-invoice"></i></span>
+                    <h3>Form 12 Submission</h3>
+                    <p>Expert assistance with completing and filing Form 12 for PAYE taxpayers to ensure you claim
+                        all tax credits and reliefs.</p>
+                    <span class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="bookkeeping.html" class="service-card has-media">
+                    <div class="service-media"><img src="images/bookkeeping.jpg" alt="Laptop showing financial charts" loading="lazy"><span class="service-num">02</span></div>
+                    <div class="service-body">
+                        <span class="service-icon"><i class="fa-solid fa-book-open"></i></span>
+                    <h3>Company Bookkeeping</h3>
+                    <p>Reliable ongoing bookkeeping services for businesses of every size to keep your finances
+                        organised and compliant.</p>
+                    <span class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="self-assessment.html" class="service-card has-media">
+                    <div class="service-media"><img src="images/self-assessment.jpg" alt="Self-employed professional working on a laptop" loading="lazy"><span class="service-num">03</span></div>
+                    <div class="service-body">
+                        <span class="service-icon"><i class="fa-solid fa-user-tie"></i></span>
+                    <h3>Self-Assessment (Form 11)</h3>
+                    <p>Comprehensive support for self-employed individuals, freelancers, and proprietary directors
+                        filing their annual income tax returns.</p>
+                    <span class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="payroll.html" class="service-card has-media">
+                    <div class="service-media"><img src="images/payroll.jpg" alt="Team meeting in a modern office" loading="lazy"><span class="service-num">04</span></div>
+                    <div class="service-body">
+                        <span class="service-icon"><i class="fa-solid fa-money-check"></i></span>
+                    <h3>PAYE &amp; Payroll Support</h3>
+                    <p>Ensuring your payroll is accurate, timely, and compliant with the latest Revenue regulations
+                        and changes.</p>
+                    <span class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="vat.html" class="service-card has-media">
+                    <div class="service-media"><img src="images/vat.jpg" alt="Customer paying by card at a shop counter" loading="lazy"><span class="service-num">05</span></div>
+                    <div class="service-body">
+                        <span class="service-icon"><i class="fa-solid fa-percent"></i></span>
+                    <h3>VAT Registration &amp; Returns</h3>
+                    <p>Guidance on VAT registration thresholds, timely filing of your VAT returns, and advice on
+                        schemes.</p>
+                    <span class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="startup.html" class="service-card has-media">
+                    <div class="service-media"><img src="images/startup.jpg" alt="Seedling growing from a pile of coins" loading="lazy"><span class="service-num">06</span></div>
+                    <div class="service-body">
+                        <span class="service-icon"><i class="fa-solid fa-seedling"></i></span>
+                    <h3>Business Start-Up Advice</h3>
+                    <p>Strategic tax planning, structure advice, and registration support for new businesses to get
+                        off to the best possible start.</p>
+                    <span class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container about-container">
+            <div class="about-media">
+                <img class="photo-main" src="images/consultation.jpg" alt="A TaxBridge adviser meeting with a client" loading="lazy">
+                <div class="about-badge"><strong>No Refund, No Fee</strong><span>on retrospective claims</span></div>
+                <figure class="photo-inset">
+                    <img src="images/cobh-cork.jpg" alt="Colourful houses and the cathedral in Cobh, County Cork" loading="lazy">
+                    <figcaption><i class="fa-solid fa-location-dot"></i> Proudly based in Ireland</figcaption>
+                </figure>
+            </div>
+            <div class="about-text">
+                <span class="eyebrow">About TaxBridge</span>
+                <h2 class="section-title">Irish tax, explained plainly and handled properly</h2>
+                <p>We are an Ireland-based tax consultancy dedicated to simplifying the complexities of the tax system.
+                    With deep expertise in local Revenue regulations, we help individuals, freelancers, and
+                    businesses navigate their financial obligations with confidence.</p>
+                <p>Our mission is to maximise your tax efficiency.</p>
+                <ul class="about-list compact">
+                    <li><i class="fa-solid fa-scale-balanced"></i><div><strong>Revenue-compliant</strong><span>Grounded in current Irish rules.</span></div></li>
+                    <li><i class="fa-solid fa-receipt"></i><div><strong>Transparent fees</strong><span>No hidden costs, agreed up front.</span></div></li>
+                    <li><i class="fa-solid fa-comments"></i><div><strong>Jargon-free</strong><span>Friendly, clear answers.</span></div></li>
+                    <li><i class="fa-solid fa-lock"></i><div><strong>GDPR compliant</strong><span>Your data handled with care.</span></div></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">How it works</span>
+                <h2 class="section-title">Your refund in three simple steps</h2>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <h3>Tell us about you</h3>
+                    <p>Send your details through the form or WhatsApp. It takes two minutes and there's no obligation.</p>
+                </div>
+                <div class="process-step">
+                    <h3>We review four years</h3>
+                    <p>We check your taxes for the last four years and find every credit and relief you're entitled to.</p>
+                </div>
+                <div class="process-step">
+                    <h3>You get your money back</h3>
+                    <p>We file with Revenue on your behalf. With No Refund, No Fee, you have nothing to lose.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="photo-band" style="--photo:url(images/ireland-bunting.jpg)">
+        <div class="container">
+            <div class="photo-band-inner">
+                <span class="eyebrow">Local expertise</span>
+                <h2>Irish tax rules, explained by people who <em>know them inside out</em></h2>
+                <p>Rent credit, medical expenses, flat-rate expenses, remote working relief: we know exactly what Irish
+                    taxpayers can claim, and we make sure you get it.</p>
+                <a href="#claim" class="btn btn-gold">Start your free review <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose-us" class="why-choose-us">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Why choose us</span>
+                <h2 class="section-title">A trusted partner for your tax affairs</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-block">
+                    <i class="fa-solid fa-landmark"></i>
+                    <h3>Ireland tax experts</h3>
+                    <p>Deep knowledge of the Irish tax system and the latest Revenue guidelines to maximise your
+                        compliance and savings.</p>
+                </div>
+                <div class="feature-block">
+                    <i class="fa-solid fa-handshake"></i>
+                    <h3>End-to-end support</h3>
+                    <p>From initial filing and advice to follow-up queries and audits, we are with you every step of the
+                        way.</p>
+                </div>
+                <div class="feature-block">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h3>Fast response times</h3>
+                    <p>We value your time and respond to all client queries promptly, within one business day.</p>
+                </div>
+                <div class="feature-block">
+                    <i class="fa-solid fa-lock"></i>
+                    <h3>Secure data handling</h3>
+                    <p>Your sensitive financial data is handled with the utmost care, fully compliant with GDPR and data
+                        protection laws.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials -->
+    <section class="testimonials-section">
+        <div class="testimonials-section-header">
+            <span class="testimonials-label">Client testimonials</span>
+            <h2 class="testimonials-title">What our clients say</h2>
+        </div>
+        <div class="feedback-bar">
+            <div class="feedback-track" id="feedbackTrack"></div>
+        </div>
+        <div class="container">
+            <div class="review-form-wrapper">
+                <h3 class="review-form-title">Share your experience</h3>
+                <form id="reviewForm" class="review-form" novalidate>
+                    <input type="text" id="reviewName" placeholder="Your name &amp; city (e.g. John D., Dublin)" maxlength="60">
+                    <div class="star-picker" id="starPicker" aria-label="Star rating">
+                        <span class="star-btn" data-value="1">★</span>
+                        <span class="star-btn" data-value="2">★</span>
+                        <span class="star-btn" data-value="3">★</span>
+                        <span class="star-btn" data-value="4">★</span>
+                        <span class="star-btn" data-value="5">★</span>
+                    </div>
+                    <textarea id="reviewMessage" placeholder="Tell us about your experience..." maxlength="300" rows="3"></textarea>
+                    <button type="submit" class="btn btn-primary">Submit review</button>
+                    <p class="review-success" id="reviewSuccess"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    (function () {
+        var DEFAULT_REVIEWS = [
+            { stars: 5, quote: 'Got €1,240 back from Revenue for medical and remote working expenses I’d never claimed. Took less than a week.', author: 'Aoife M., Dublin' },
+            { stars: 5, quote: 'TaxBridge handled my first Form 11 perfectly. Saved me hours and found deductions I didn’t know about.', author: 'Ciárán O., Cork' },
+            { stars: 5, quote: 'VAT registration sorted in two days. The team explained everything clearly and kept me compliant from day one.', author: 'Niamh B., Galway' },
+            { stars: 5, quote: 'Switched to TaxBridge after years of doing it myself. Already recovered €870 in unclaimed credits.', author: 'Seán T., Limerick' },
+            { stars: 5, quote: 'Brilliant service for my small business. Payroll, VAT, and bookkeeping all handled with zero stress on my end.', author: 'Róisín F., Waterford' },
+            { stars: 5, quote: 'Fast, professional, and genuinely great value. My tax refund covered the fee three times over.', author: 'Patrick D., Kilkenny' }
+        ];
+
+        function esc(str) {
+            return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        function makeStars(n) {
+            return '★'.repeat(n) + '☆'.repeat(5 - n);
+        }
+
+        function cardHtml(r) {
+            return '<div class="feedback-card">' +
+                '<div class="feedback-stars">' + makeStars(r.stars) + '</div>' +
+                '<p class="feedback-quote">“' + esc(r.quote) + '”</p>' +
+                '<span class="feedback-author">' + esc(r.author) + '</span>' +
+                '</div>';
+        }
+
+        function renderTrack() {
+            var stored = JSON.parse(localStorage.getItem('taxbridge_reviews') || '[]');
+            var all = DEFAULT_REVIEWS.concat(stored);
+            var track = document.getElementById('feedbackTrack');
+            if (!track) return;
+            var html = all.concat(all).map(cardHtml).join('');
+            track.innerHTML = html;
+            // Reset animation so new cards animate from start
+            track.style.animation = 'none';
+            track.offsetHeight;
+            track.style.animation = '';
+        }
+
+        // Star picker
+        var selectedStars = 0;
+        var starPicker = document.getElementById('starPicker');
+        if (starPicker) {
+            var starBtns = starPicker.querySelectorAll('.star-btn');
+            starBtns.forEach(function (btn) {
+                btn.addEventListener('mouseover', function () {
+                    var val = +this.dataset.value;
+                    starBtns.forEach(function (b) { b.classList.toggle('active', +b.dataset.value <= val); });
+                });
+                btn.addEventListener('mouseout', function () {
+                    starBtns.forEach(function (b) { b.classList.toggle('active', +b.dataset.value <= selectedStars); });
+                });
+                btn.addEventListener('click', function () {
+                    selectedStars = +this.dataset.value;
+                    starBtns.forEach(function (b) { b.classList.toggle('active', +b.dataset.value <= selectedStars); });
+                });
+            });
+        }
+
+        // Form submit
+        var form = document.getElementById('reviewForm');
+        if (form) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var name = document.getElementById('reviewName').value.trim();
+                var message = document.getElementById('reviewMessage').value.trim();
+                var success = document.getElementById('reviewSuccess');
+                if (!name) { success.style.color = 'var(--danger)'; success.textContent = 'Please enter your name.'; return; }
+                if (selectedStars < 1) { success.style.color = 'var(--danger)'; success.textContent = 'Please select a star rating.'; return; }
+                if (!message) { success.style.color = 'var(--danger)'; success.textContent = 'Please write a short review.'; return; }
+                var reviews = JSON.parse(localStorage.getItem('taxbridge_reviews') || '[]');
+                reviews.push({ stars: selectedStars, quote: message, author: name });
+                localStorage.setItem('taxbridge_reviews', JSON.stringify(reviews));
+                renderTrack();
+                form.reset();
+                selectedStars = 0;
+                if (starPicker) starPicker.querySelectorAll('.star-btn').forEach(function (b) { b.classList.remove('active'); });
+                success.style.color = '';
+                success.textContent = 'Thank you! Your review is now live in the feed.';
+                setTimeout(function () { success.textContent = ''; }, 5000);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', renderTrack);
+    })();
+    </script>
+
+    <section id="contact" class="contact">
+        <div class="container contact-container">
+            <div class="contact-text">
+                <span class="eyebrow">Get in touch</span>
+                <h2 class="section-title">Let's talk about your taxes</h2>
+                <p>Have a complex tax question or need a personalised quote? Send us a message or call us directly. We
+                    reply within one business day.</p>
+                <div class="contact-list">
+                    <a class="contact-item" href="https://wa.me/353899777898" target="_blank" rel="noopener">
+                        <span class="ci-icon wa"><i class="fa-brands fa-whatsapp"></i></span>
+                        <div><small>WhatsApp</small><span>+353 89 977 7898</span></div>
+                    </a>
+                    <a class="contact-item" href="tel:+353899777898">
+                        <span class="ci-icon"><i class="fa-solid fa-phone"></i></span>
+                        <div><small>Phone</small><span>+353 89 977 7898</span></div>
+                    </a>
+                    <a class="contact-item" href="mailto:info@taxbridge.ie">
+                        <span class="ci-icon"><i class="fa-regular fa-envelope"></i></span>
+                        <div><small>Email</small><span>info@taxbridge.ie</span></div>
+                    </a>
+                </div>
+                <div class="contact-photo">
+                    <img src="images/handshake.jpg" alt="Adviser shaking hands with a client" loading="lazy">
+                </div>
+            </div>
+            <div class="contact-form-card">
+                <h3>Request a consultation</h3>
+                <p>Tell us a little about what you need and we'll be in touch.</p>
+                <form id="leadFormContact" class="contact-form"
+                    data-whatsapp="New Consultation Request - TaxBridge Website">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name_first_contact">First name *</label>
+                            <input type="text" id="name_first_contact" name="Name_First" required
+                                placeholder="First name" maxlength="255">
+                        </div>
+                        <div class="form-group">
+                            <label for="name_last_contact">Last name *</label>
+                            <input type="text" id="name_last_contact" name="Name_Last" required placeholder="Last name"
+                                maxlength="255">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email_contact">Email *</label>
+                            <input type="email" id="email_contact" name="Email" required placeholder="your@email.com"
+                                maxlength="255">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone_contact">Phone</label>
+                            <input type="tel" id="phone_contact" name="PhoneNumber_countrycode" placeholder="08x xxx xxxx"
+                                maxlength="20">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="service_contact">Service *</label>
+                        <select id="service_contact" name="Dropdown" required>
+                            <option value="" selected>Select a service</option>
+                            <option value="FORM 12">Form 12 Submission</option>
+                            <option value="COMPANY BOOKKEEPING">Company Bookkeeping</option>
+                            <option value="SELF-ASSESSMENT (FORM 11)">Self-Assessment (Form 11)</option>
+                            <option value="PAYE &amp; PAYROLL SUPPORT">PAYE &amp; Payroll Support</option>
+                            <option value="VAT REGISTRATION &amp; RETURNS">VAT Registration &amp; Returns</option>
+                            <option value="BUSINESS START-UP ADVICE">Business Start-Up Advice</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message_contact">Message</label>
+                        <textarea id="message_contact" name="MultiLine" rows="4"
+                            placeholder="Briefly describe your tax needs." maxlength="65535"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">Request consultation <i class="fa-brands fa-whatsapp"></i></button>
+                    <p class="form-note"><i class="fa-brands fa-whatsapp"></i> Opens WhatsApp with your details ready to send. See our <a href="privacy.html">Privacy Policy</a>.</p>
+                    <div id="formMessageContact" class="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="logo" aria-label="TaxBridge home">
+                        <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 18h20"/><path d="M4 18v-4"/><path d="M20 18v-4"/><path d="M3 14c3-6 15-6 18 0"/><path d="M9 18v-4.5"/><path d="M15 18v-4.5"/><path d="M12 18v-6"/></svg></span>
+                        <span class="logo-text"><span class="logo-name">Tax<em>Bridge</em></span><span class="logo-tag">Ireland</span></span>
+                    </a>
+                    <p class="footer-about">Smart tax solutions for individuals and businesses across Ireland.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="form12.html">Form 12 Submission</a></li>
+                        <li><a href="self-assessment.html">Self-Assessment</a></li>
+                        <li><a href="bookkeeping.html">Bookkeeping</a></li>
+                        <li><a href="payroll.html">PAYE &amp; Payroll</a></li>
+                        <li><a href="vat.html">VAT</a></li>
+                        <li><a href="startup.html">Start-Up Advice</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#why-choose-us">Why Choose Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="https://wa.me/353899777898" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>WhatsApp us</a></li>
+                        <li><a href="tel:+353899777898"><i class="fa-solid fa-phone"></i>+353 89 977 7898</a></li>
+                        <li><a href="mailto:info@taxbridge.ie"><i class="fa-regular fa-envelope"></i>info@taxbridge.ie</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span data-year>2026</span> TaxBridge. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms &amp; Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
