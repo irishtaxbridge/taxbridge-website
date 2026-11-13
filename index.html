@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaxBridge | Smart Tax Solutions in Ireland</title>
+    <title>TaxBridge | Form 12 Tax Refunds 2023-2026 Ireland</title>
     <meta name="description"
-        content="Professional tax consultancy in Ireland for individuals and businesses of every size. Expert advice on Form 12, Bookkeeping, and more.">
+        content="PAYE worker in Ireland? Claim your Form 12 tax refund for 2023, 2024, 2025 and 2026. Rent, medical, work-from-home and more. No refund, no fee.">
     <script src="theme.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,13 +40,14 @@
                 <ul class="nav-list">
                     <li><a href="#home" class="nav-link active">Home</a></li>
                     <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="form12.html" class="nav-link">Tax Refund (Form 12)</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#why-choose-us" class="nav-link">Why Choose Us</a></li>
                     <li><a href="blog.html" class="nav-link">Blog</a></li>
                     <li><a href="#contact" class="nav-link btn-nav">Contact</a></li>
                 </ul>
                 <div class="header-actions">
-                    <button class="theme-toggle" type="button" aria-label="Switch between light and dark mode" title="Light / dark mode"><i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i></button>
+                    <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Dark mode" title="Switch to dark mode"><span class="tt-track"><i class="fa-solid fa-sun tt-sun" aria-hidden="true"></i><i class="fa-solid fa-moon tt-moon" aria-hidden="true"></i><span class="tt-knob"></span></span></button>
                     <button class="mobile-menu-btn" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
                 </div>
             </nav>
@@ -56,69 +57,72 @@
     <section id="home" class="hero" style="--photo:url(images/hero-dublin.jpg)">
         <div class="container hero-container">
             <div class="hero-content">
-                <span class="eyebrow">Tax consultancy &middot; Ireland</span>
-                <h1>Smart tax solutions for individuals and <em>businesses</em> in Ireland</h1>
-                <p>Stress-free tax filing, full compliance, and clear advice tailored to your needs. Stop worrying about
-                    Revenue forms and start saving.</p>
+                <span class="eyebrow">Tax Refund (Form 12) &middot; 2023 &ndash; 2026</span>
+                <h1>Work PAYE in Ireland? You could be owed tax back for <em>2023 to 2026</em></h1>
+                <p>Most PAYE workers never claim their rent, medical or work-from-home credits. We check your last four years, file your Form 12 with Revenue and get your money back.</p>
                 <div class="hero-actions">
-                    <a href="#claim" class="btn btn-gold">Claim your refund <i class="fa-solid fa-arrow-right"></i></a>
-                    <a href="#services" class="btn btn-ghost-light">Explore services</a>
+                    <a href="#claim" class="btn btn-gold">Check my refund <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#services" class="btn btn-ghost-light">All our services</a>
                 </div>
                 <ul class="hero-trust">
                     <li><i class="fa-solid fa-shield-halved"></i> No Refund &ndash; No Fee</li>
-                    <li><i class="fa-solid fa-clock-rotate-left"></i> 4-year tax review</li>
+                    <li><i class="fa-solid fa-calendar-check"></i> 4 years checked</li>
                     <li><i class="fa-solid fa-reply"></i> Reply within 1 business day</li>
                 </ul>
             </div>
             <div class="hero-form-container" id="claim">
                 <div class="hero-form-wrapper">
-                    <p class="form-card-eyebrow">Free refund check</p>
-                    <h2>Claim your tax refund today</h2>
-                    <p>Our experts will contact you soon.</p>
-                    <form id="leadFormHero" class="hero-form"
-                        data-whatsapp="New Tax Refund Claim - TaxBridge Website">
+                    <p class="form-card-eyebrow">Free Tax Refund (Form 12) check</p>
+                    <h2>See what you're owed</h2>
+                    <p>Takes 1 minute. No documents needed yet.</p>
+                    <form id="form12FormHero" class="hero-form f12-form" data-whatsapp="New Form 12 Refund Check (2023-2026) - TaxBridge Website">
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="name_first_hero">First name *</label>
-                                <input type="text" id="name_first_hero" name="Name_First" required
-                                    placeholder="First name" maxlength="255">
+                                <label for="f12_firstHero">First name *</label>
+                                <input type="text" id="f12_firstHero" name="Name_First" required placeholder="First name" maxlength="255" autocomplete="given-name">
                             </div>
                             <div class="form-group">
-                                <label for="name_last_hero">Last name *</label>
-                                <input type="text" id="name_last_hero" name="Name_Last" required placeholder="Last name"
-                                    maxlength="255">
+                                <label for="f12_lastHero">Last name *</label>
+                                <input type="text" id="f12_lastHero" name="Name_Last" required placeholder="Last name" maxlength="255" autocomplete="family-name">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="email_hero">Email *</label>
-                            <input type="email" id="email_hero" name="Email" required placeholder="your@email.com"
-                                maxlength="255">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="f12_phoneHero">Phone *</label>
+                                <input type="tel" id="f12_phoneHero" name="PhoneNumber_countrycode" required placeholder="08x xxx xxxx" maxlength="20" autocomplete="tel">
+                            </div>
+                            <div class="form-group">
+                                <label for="f12_emailHero">Email</label>
+                                <input type="email" id="f12_emailHero" name="Email" placeholder="your@email.com" maxlength="255" autocomplete="email">
+                            </div>
                         </div>
+                        <fieldset class="form-group f12-fieldset" data-wa-label="Years to check" data-wa-required="Please choose at least one year.">
+                            <legend>Years to check *</legend>
+                            <div class="chip-group">
+                                <label class="chip"><input type="checkbox" name="Years" value="2023" checked><span>2023</span></label>
+                                <label class="chip"><input type="checkbox" name="Years" value="2024" checked><span>2024</span></label>
+                                <label class="chip"><input type="checkbox" name="Years" value="2025" checked><span>2025</span></label>
+                                <label class="chip"><input type="checkbox" name="Years" value="2026" checked><span>2026</span></label>
+                            </div>
+                        </fieldset>
+                        <fieldset class="form-group f12-fieldset" data-wa-label="Paid for">
+                            <legend>In those years, did you pay for any of these?</legend>
+                            <div class="chip-group">
+                                <label class="chip"><input type="checkbox" name="Claims" value="Rent"><span>Rent</span></label>
+                                <label class="chip"><input type="checkbox" name="Claims" value="Medical / dental"><span>Medical / dental</span></label>
+                                <label class="chip"><input type="checkbox" name="Claims" value="Worked from home"><span>Worked from home</span></label>
+                                <label class="chip"><input type="checkbox" name="Claims" value="College fees"><span>College fees</span></label>
+                                <label class="chip"><input type="checkbox" name="Claims" value="Tuition fees"><span>Tuition fees</span></label>
+                                <label class="chip"><input type="checkbox" name="Claims" value="Not sure"><span>Not sure</span></label>
+                            </div>
+                        </fieldset>
                         <div class="form-group">
-                            <label for="phone_hero">Phone</label>
-                            <input type="tel" id="phone_hero" name="PhoneNumber_countrycode" placeholder="08x xxx xxxx"
-                                maxlength="20">
+                            <label for="f12_infoHero">Additional information (optional)</label>
+                            <textarea id="f12_infoHero" name="MultiLine" rows="2" placeholder="Anything else you'd like us to know" maxlength="65535"></textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="service_hero">Service *</label>
-                            <select id="service_hero" name="Dropdown" required>
-                                <option value="" selected>Select a service</option>
-                                <option value="FORM 12">Form 12 Submission</option>
-                                <option value="COMPANY BOOKKEEPING">Company Bookkeeping</option>
-                                <option value="SELF-ASSESSMENT (FORM 11)">Self-Assessment (Form 11)</option>
-                                <option value="PAYE &amp; PAYROLL SUPPORT">PAYE &amp; Payroll Support</option>
-                                <option value="VAT REGISTRATION &amp; RETURNS">VAT Registration &amp; Returns</option>
-                                <option value="BUSINESS START-UP ADVICE">Business Start-Up Advice</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message_hero">Additional info (optional)</label>
-                            <textarea id="message_hero" name="MultiLine" rows="2"
-                                placeholder="E.g. medical expenses, rent, working from home" maxlength="65535"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-submit">Submit via WhatsApp <i class="fa-brands fa-whatsapp"></i></button>
+                        <button type="submit" class="btn btn-primary btn-submit">Check my refund</button>
                         <p class="form-note"><i class="fa-brands fa-whatsapp"></i> Opens WhatsApp with your details ready to send. See our <a href="privacy.html">Privacy Policy</a>.</p>
-                        <div id="formMessageHero" class="form-message"></div>
+                        <div class="form-message"></div>
                     </form>
                 </div>
             </div>
@@ -127,75 +131,70 @@
 
     <section id="services" class="services">
         <div class="container">
-            <div class="section-head">
-                <span class="eyebrow">What we do</span>
-                <h2 class="section-title">Our services</h2>
-                <p>From a single Form 12 to the full financial running of your company, we take care of the Revenue side so you don't have to.</p>
+            <div class="section-head center">
+                <span class="eyebrow">Our services</span>
+                <h2 class="section-title">Tax help for individuals, the self-employed and companies</h2>
+                <p>From getting your PAYE tax back to registering and running your company, we take care of the Revenue side so you don't have to.</p>
             </div>
             <div class="services-grid">
                 <a href="form12.html" class="service-card has-media">
                     <div class="service-media"><img src="images/form12.jpg" alt="Tax forms with a calculator and pen" loading="lazy"><span class="service-num">01</span></div>
                     <div class="service-body">
-                        <span class="service-icon"><i class="fa-solid fa-file-invoice"></i></span>
-                    <h3>Form 12 Submission</h3>
-                    <p>Expert assistance with completing and filing Form 12 for PAYE taxpayers to ensure you claim
-                        all tax credits and reliefs.</p>
-                    <span class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
-                    </div>
-                </a>
-                <a href="bookkeeping.html" class="service-card has-media">
-                    <div class="service-media"><img src="images/bookkeeping.jpg" alt="Laptop showing financial charts" loading="lazy"><span class="service-num">02</span></div>
-                    <div class="service-body">
-                        <span class="service-icon"><i class="fa-solid fa-book-open"></i></span>
-                    <h3>Company Bookkeeping</h3>
-                    <p>Reliable ongoing bookkeeping services for businesses of every size to keep your finances
-                        organised and compliant.</p>
-                    <span class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
-                    </div>
-                </a>
-                <a href="self-assessment.html" class="service-card has-media">
-                    <div class="service-media"><img src="images/self-assessment.jpg" alt="Self-employed professional working on a laptop" loading="lazy"><span class="service-num">03</span></div>
-                    <div class="service-body">
-                        <span class="service-icon"><i class="fa-solid fa-user-tie"></i></span>
-                    <h3>Self-Assessment (Form 11)</h3>
-                    <p>Comprehensive support for self-employed individuals, freelancers, and proprietary directors
-                        filing their annual income tax returns.</p>
-                    <span class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
-                    </div>
-                </a>
-                <a href="payroll.html" class="service-card has-media">
-                    <div class="service-media"><img src="images/payroll.jpg" alt="Team meeting in a modern office" loading="lazy"><span class="service-num">04</span></div>
-                    <div class="service-body">
-                        <span class="service-icon"><i class="fa-solid fa-money-check"></i></span>
-                    <h3>PAYE &amp; Payroll Support</h3>
-                    <p>Ensuring your payroll is accurate, timely, and compliant with the latest Revenue regulations
-                        and changes.</p>
-                    <span class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
-                    </div>
-                </a>
-                <a href="vat.html" class="service-card has-media">
-                    <div class="service-media"><img src="images/vat.jpg" alt="Customer paying by card at a shop counter" loading="lazy"><span class="service-num">05</span></div>
-                    <div class="service-body">
-                        <span class="service-icon"><i class="fa-solid fa-percent"></i></span>
-                    <h3>VAT Registration &amp; Returns</h3>
-                    <p>Guidance on VAT registration thresholds, timely filing of your VAT returns, and advice on
-                        schemes.</p>
-                    <span class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+                        <span class="service-icon"><i class="fa-solid fa-hand-holding-dollar"></i></span>
+                        <h3>Tax Refund (Form 12)</h3>
+                        <p>PAYE worker or pensioner? We check 2023 to 2026, claim every credit you missed and get your money back. No refund, no fee.</p>
+                        <span class="service-link">See all Form 12 details <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </a>
                 <a href="startup.html" class="service-card has-media">
-                    <div class="service-media"><img src="images/startup.jpg" alt="Seedling growing from a pile of coins" loading="lazy"><span class="service-num">06</span></div>
+                    <div class="service-media"><img src="images/signing.jpg" alt="Signing a company document with a pen" loading="lazy"><span class="service-num">02</span></div>
+                    <div class="service-body">
+                        <span class="service-icon"><i class="fa-solid fa-building"></i></span>
+                        <h3>Company Registration &amp; Tax Filing</h3>
+                        <p>We register your company with the CRO and Revenue, then file your company tax returns and annual returns on time.</p>
+                        <span class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="startup.html" class="service-card has-media">
+                    <div class="service-media"><img src="images/startup.jpg" alt="Seedling growing from a pile of coins" loading="lazy"><span class="service-num">03</span></div>
                     <div class="service-body">
                         <span class="service-icon"><i class="fa-solid fa-seedling"></i></span>
-                    <h3>Business Start-Up Advice</h3>
-                    <p>Strategic tax planning, structure advice, and registration support for new businesses to get
-                        off to the best possible start.</p>
-                    <span class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+                        <h3>Startup Support</h3>
+                        <p>Sole trader or limited company? We help you choose the right structure, register for tax and start off on the right foot.</p>
+                        <span class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="self-assessment.html" class="service-card has-media">
+                    <div class="service-media"><img src="images/self-assessment.jpg" alt="Self-employed professional working on a laptop" loading="lazy"><span class="service-num">04</span></div>
+                    <div class="service-body">
+                        <span class="service-icon"><i class="fa-solid fa-user-tie"></i></span>
+                        <h3>Self-Employed Tax Returns (Form 11)</h3>
+                        <p>Annual Form 11 returns for sole traders, freelancers, contractors and company directors, with every allowable expense claimed.</p>
+                        <span class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="bookkeeping.html" class="service-card has-media">
+                    <div class="service-media"><img src="images/bookkeeping.jpg" alt="Laptop showing financial charts" loading="lazy"><span class="service-num">05</span></div>
+                    <div class="service-body">
+                        <span class="service-icon"><i class="fa-solid fa-book-open"></i></span>
+                        <h3>Bookkeeping</h3>
+                        <p>Reliable monthly bookkeeping that keeps your records tidy, your accounts up to date and your business Revenue-ready.</p>
+                        <span class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="self-assessment.html" class="service-card has-media">
+                    <div class="service-media"><img src="images/cobh-cork.jpg" alt="Row of colourful houses in Cobh, County Cork" loading="lazy"><span class="service-num">06</span></div>
+                    <div class="service-body">
+                        <span class="service-icon"><i class="fa-solid fa-house-chimney"></i></span>
+                        <h3>Rental &amp; Other Non-PAYE Income</h3>
+                        <p>Renting out a property or earning extra income outside your job? We declare it correctly to Revenue and claim the expenses you're allowed.</p>
+                        <span class="service-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </a>
             </div>
         </div>
     </section>
+
 
     <section id="about" class="about">
         <div class="container about-container">
@@ -224,71 +223,13 @@
         </div>
     </section>
 
-    <section class="process">
+    <section id="why-choose-us" class="why-choose-us f12-why">
         <div class="container">
-            <div class="section-head">
-                <span class="eyebrow">How it works</span>
-                <h2 class="section-title">Your refund in three simple steps</h2>
-            </div>
-            <div class="process-grid">
-                <div class="process-step">
-                    <h3>Tell us about you</h3>
-                    <p>Send your details through the form or WhatsApp. It takes two minutes and there's no obligation.</p>
-                </div>
-                <div class="process-step">
-                    <h3>We review four years</h3>
-                    <p>We check your taxes for the last four years and find every credit and relief you're entitled to.</p>
-                </div>
-                <div class="process-step">
-                    <h3>You get your money back</h3>
-                    <p>We file with Revenue on your behalf. With No Refund, No Fee, you have nothing to lose.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="photo-band" style="--photo:url(images/ireland-bunting.jpg)">
-        <div class="container">
-            <div class="photo-band-inner">
-                <span class="eyebrow">Local expertise</span>
-                <h2>Irish tax rules, explained by people who <em>know them inside out</em></h2>
-                <p>Rent credit, medical expenses, flat-rate expenses, remote working relief: we know exactly what Irish
-                    taxpayers can claim, and we make sure you get it.</p>
-                <a href="#claim" class="btn btn-gold">Start your free review <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <section id="why-choose-us" class="why-choose-us">
-        <div class="container">
-            <div class="section-head">
-                <span class="eyebrow">Why choose us</span>
-                <h2 class="section-title">A trusted partner for your tax affairs</h2>
-            </div>
             <div class="features-grid">
-                <div class="feature-block">
-                    <i class="fa-solid fa-landmark"></i>
-                    <h3>Ireland tax experts</h3>
-                    <p>Deep knowledge of the Irish tax system and the latest Revenue guidelines to maximise your
-                        compliance and savings.</p>
-                </div>
-                <div class="feature-block">
-                    <i class="fa-solid fa-handshake"></i>
-                    <h3>End-to-end support</h3>
-                    <p>From initial filing and advice to follow-up queries and audits, we are with you every step of the
-                        way.</p>
-                </div>
-                <div class="feature-block">
-                    <i class="fa-solid fa-bolt"></i>
-                    <h3>Fast response times</h3>
-                    <p>We value your time and respond to all client queries promptly, within one business day.</p>
-                </div>
-                <div class="feature-block">
-                    <i class="fa-solid fa-lock"></i>
-                    <h3>Secure data handling</h3>
-                    <p>Your sensitive financial data is handled with the utmost care, fully compliant with GDPR and data
-                        protection laws.</p>
-                </div>
+                <div class="feature-block"><i class="fa-solid fa-landmark"></i><h3>Irish tax experts</h3><p>For PAYE workers, the self-employed, landlords and companies.</p></div>
+                <div class="feature-block"><i class="fa-solid fa-receipt"></i><h3>Clear, fair fees</h3><p>Agreed up front. No refund, no fee on Form 12 claims.</p></div>
+                <div class="feature-block"><i class="fa-solid fa-bolt"></i><h3>Fast replies</h3><p>We get back to you within one business day.</p></div>
+                <div class="feature-block"><i class="fa-solid fa-lock"></i><h3>Safe &amp; private</h3><p>Your data is handled securely and GDPR compliant.</p></div>
             </div>
         </div>
     </section>
@@ -468,7 +409,7 @@
                         <label for="service_contact">Service *</label>
                         <select id="service_contact" name="Dropdown" required>
                             <option value="" selected>Select a service</option>
-                            <option value="FORM 12">Form 12 Submission</option>
+                            <option value="FORM 12">Tax Refund (Form 12)</option>
                             <option value="COMPANY BOOKKEEPING">Company Bookkeeping</option>
                             <option value="SELF-ASSESSMENT (FORM 11)">Self-Assessment (Form 11)</option>
                             <option value="PAYE &amp; PAYROLL SUPPORT">PAYE &amp; Payroll Support</option>
@@ -502,7 +443,7 @@
                 <div class="footer-col">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="form12.html">Form 12 Submission</a></li>
+                        <li><a href="form12.html">Tax Refund (Form 12)</a></li>
                         <li><a href="self-assessment.html">Self-Assessment</a></li>
                         <li><a href="bookkeeping.html">Bookkeeping</a></li>
                         <li><a href="payroll.html">PAYE &amp; Payroll</a></li>

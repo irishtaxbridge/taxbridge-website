@@ -362,25 +362,64 @@ section { padding: 96px 0; }
 
 .header-actions { display: flex; align-items: center; gap: 10px; }
 
+/* Light / dark sliding switch (tap or swipe) */
 .theme-toggle {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid var(--line-strong);
+    /* invisible padding gives a 44px-high touch target around the small switch */
+    padding: 8px 2px;
+    min-height: 44px;
+    border: 0;
     background: transparent;
-    color: var(--ink);
     cursor: pointer;
-    display: grid;
-    place-items: center;
-    font-size: 0.95rem;
-    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    touch-action: pan-y;               /* horizontal swipes go to the switch */
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
 }
 
-.theme-toggle:hover { border-color: var(--brass); color: var(--accent); }
-.theme-toggle .fa-sun { display: none; }
-:root[data-theme="dark"] .theme-toggle .fa-sun { display: inline-block; }
-:root[data-theme="dark"] .theme-toggle .fa-moon { display: none; }
+.tt-track {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 56px;
+    height: 28px;
+    padding: 0 7px;
+    border-radius: 999px;
+    border: 1px solid var(--line-strong);
+    background: var(--surface-2);
+    font-size: 0.72rem;
+    color: var(--muted, var(--body));
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
 
+.tt-sun, .tt-moon { position: relative; z-index: 1; transition: color 0.25s ease, opacity 0.25s ease; }
+.tt-sun { color: #B07A1F; }
+.tt-moon { opacity: 0.55; }
+
+.tt-knob {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+/* the knob sits behind the active icon */
+.tt-knob { z-index: 0; }
+
+.theme-toggle:hover .tt-track,
+.theme-toggle:focus-visible .tt-track { border-color: var(--brass); }
+.theme-toggle:focus-visible { outline: none; }
+.theme-toggle:focus-visible .tt-track { box-shadow: 0 0 0 3px var(--accent-soft); }
+
+:root[data-theme="dark"] .tt-knob { transform: translateX(28px); background: var(--brass); }
+:root[data-theme="dark"] .tt-sun { color: inherit; opacity: 0.55; }
+:root[data-theme="dark"] .tt-moon { color: #1A1A1A; opacity: 1; }
 .mobile-menu-btn {
     display: none;
     background: none;
@@ -2352,8 +2391,289 @@ a.contact-item:hover { border-color: var(--brass); }
     .service-body { padding: 0 24px 28px; }
     .detail-photo { margin: -32px -22px 28px; }
     .about-media { padding: 0 20px 40px 0; }
+
+    /* Tables: tighter cells so 3-column tables fit narrow phones */
+    .post-table { font-size: 0.86rem; }
+    .post-table th { padding: 11px 10px; font-size: 0.72rem; letter-spacing: 0.03em; }
+    .post-table td { padding: 11px 10px; overflow-wrap: anywhere; }
+    .service-detail-content .post-table td,
+    .service-detail-content .post-table th { font-size: 0.84rem; }
+
+    /* Callouts nested in cards: less padding so text isn't squeezed */
+    .budget-callout { padding: 22px 18px; }
 }
+
+/* Safety net against sideways scrolling on any screen */
+img, video, iframe { max-width: 100%; }
+body { overflow-wrap: break-word; }
 
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+/* =========================================================
+   Form 12 focused home page + Form 12 form
+   ========================================================= */
+.f12-fieldset { border: none; padding: 0; min-width: 0; }
+.f12-fieldset legend {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--ink);
+    font-size: 0.84rem;
+    font-weight: 600;
+    padding: 0;
+}
+.chip-group { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { position: relative; cursor: pointer; }
+.chip input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.chip span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 13px;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    background: var(--bg);
+    color: var(--body);
+    font-size: 0.86rem;
+    font-weight: 500;
+    line-height: 1.2;
+    transition: var(--transition);
+    user-select: none;
+}
+.chip:hover span { border-color: var(--brass); }
+.chip input:checked + span {
+    background: var(--btn-bg);
+    border-color: var(--btn-bg);
+    color: var(--btn-fg);
+}
+.chip input:checked + span::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 0.72rem;
+}
+.chip input:focus-visible + span { outline: 2px solid var(--brass); outline-offset: 2px; }
+
+/* Can I claim? */
+.f12-claims { background: var(--surface-2); }
+.f12-claim-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+.f12-claim {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 28px 26px;
+    transition: var(--transition);
+}
+.f12-claim:hover { border-color: var(--brass); box-shadow: var(--shadow); }
+.f12-claim i {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+}
+.f12-claim h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.25rem; margin-bottom: 6px; }
+.f12-claim p { font-size: 0.97rem; }
+
+/* Years */
+.f12-years { background: var(--bg); }
+.f12-year-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    max-width: 920px;
+    margin: 0 auto;
+}
+.f12-year {
+    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--brass);
+    border-radius: var(--radius-lg);
+    padding: 26px 16px;
+}
+.f12-year b {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 2.4rem;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+.f12-year span { font-size: 0.88rem; color: var(--muted); }
+.f12-center { text-align: center; margin-top: 40px; }
+
+/* Why (compact dark strip) */
+.f12-why { padding: 64px 0; position: relative; }
+.f12-why .features-grid { border-top: none; }
+.f12-why .feature-block { padding-top: 8px; }
+.f12-anchor { position: absolute; top: 0; }
+
+/* FAQ */
+.f12-faq { background: var(--surface-2); }
+.f12-faq-list { max-width: 760px; margin: 0 auto; }
+.f12-faq-list details {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    margin-bottom: 10px;
+    transition: var(--transition);
+}
+.f12-faq-list details[open] { border-color: var(--brass); }
+.f12-faq-list summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 22px;
+    font-weight: 600;
+    color: var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+}
+.f12-faq-list summary::-webkit-details-marker { display: none; }
+.f12-faq-list summary::after {
+    content: '\f078';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 0.75rem;
+    color: var(--accent);
+    transition: transform 0.3s ease;
+}
+.f12-faq-list details[open] summary::after { transform: rotate(180deg); }
+.f12-faq-list details p { padding: 0 22px 20px; }
+
+/* Other services */
+.f12-others { padding: 64px 0; background: var(--bg); border-top: 1px solid var(--line); }
+.f12-others-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 40px;
+    align-items: center;
+}
+.f12-others h2 { font-size: clamp(1.6rem, 2.6vw, 2rem); }
+.f12-others .eyebrow { margin-bottom: 12px; }
+.f12-others-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.f12-others-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 11px 16px;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    color: var(--ink);
+    font-size: 0.92rem;
+    font-weight: 500;
+    background: var(--surface);
+}
+.f12-others-links a i { color: var(--accent); }
+.f12-others-links a:hover { border-color: var(--brass); background: var(--surface-2); }
+
+/* Form 12 service page: form inside the content card */
+.f12-inline-form { margin-top: 36px; padding-top: 32px; border-top: 1px solid var(--line); }
+.f12-inline-form h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.6rem; margin-bottom: 6px; }
+.f12-inline-form > p:not(.form-card-eyebrow) { color: var(--muted); font-size: 0.93rem; margin-bottom: 22px; }
+
+@media (max-width: 992px) {
+    .f12-claim-grid { grid-template-columns: repeat(2, 1fr); }
+    .f12-year-grid { grid-template-columns: repeat(2, 1fr); }
+    .f12-others-inner { grid-template-columns: 1fr; gap: 20px; }
+}
+@media (max-width: 640px) {
+    .f12-claim-grid { grid-template-columns: 1fr; }
+    .f12-year b { font-size: 2rem; }
+}
+
+/* Tax Refund (Form 12) area: all Form 12 content grouped in one framed block */
+.f12-area { background: var(--surface-2); }
+.f12-area-head { max-width: 760px; margin: 0 auto 56px; text-align: center; }
+.f12-area-head p { font-size: 1.08rem; margin-top: 16px; }
+.f12-area-head .section-title { margin-bottom: 0; }
+.f12-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 18px;
+    border-radius: 999px;
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+.f12-block {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    margin-bottom: 24px;
+}
+.f12-block.process { background: var(--bg); }
+.f12-block-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.45rem;
+    margin-bottom: 26px;
+}
+.f12-block-title span {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-family: var(--font-main);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+.f12-block-note { margin: -14px 0 24px; }
+.f12-block .f12-year-grid { max-width: none; }
+.f12-block .f12-faq-list { max-width: none; }
+.f12-block .process-grid { margin-top: 18px; }
+.f12-area .f12-center { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
+
+@media (max-width: 640px) {
+    .f12-block { padding: 26px 20px; }
+    .f12-block-title { font-size: 1.2rem; align-items: flex-start; }
+}
+
+/* Tax Refund (Form 12) page: claim cards, years, steps and FAQ inside the content card */
+.service-detail-content .f12-claim-grid-2 { grid-template-columns: repeat(2, 1fr); margin: 8px 0 12px; }
+.service-detail-content .f12-claim { padding: 24px 22px; }
+.service-detail-content .f12-claim h4,
+.service-detail-content .f12-steps h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: var(--ink);
+    margin-bottom: 6px;
+}
+.service-detail-content .f12-claim p { font-size: 0.95rem; line-height: 1.65; margin-bottom: 0; }
+.service-detail-content .f12-year-grid { margin: 8px 0 12px; max-width: none; }
+.service-detail-content .f12-year span { line-height: 1.4; display: block; }
+.service-detail-content .f12-steps { margin: 26px 0 12px; gap: 28px; }
+.service-detail-content .f12-steps .process-step::before { background: var(--surface); }
+.service-detail-content .f12-steps p { font-size: 0.95rem; line-height: 1.65; }
+.service-detail-content .f12-faq-list { max-width: none; margin-top: 8px; }
+.service-detail-content .f12-faq-list details { background: var(--bg); }
+.service-detail-content .f12-faq-list details p { margin-bottom: 0; }
+
+@media (max-width: 760px) {
+    .service-detail-content .f12-claim-grid-2 { grid-template-columns: 1fr; }
+    .service-detail-content .f12-year-grid { grid-template-columns: repeat(2, 1fr); }
 }

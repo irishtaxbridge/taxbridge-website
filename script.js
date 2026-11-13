@@ -59,12 +59,38 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!form.hasAttribute || !form.hasAttribute('data-whatsapp')) return;
         e.preventDefault();
 
+        var msgEl = form.querySelector('.form-message');
+
+        // Checkbox groups that need at least one ticked (e.g. Form 12 years)
+        var groups = form.querySelectorAll('fieldset[data-wa-required]');
+        for (var g = 0; g < groups.length; g++) {
+            if (!groups[g].querySelector('input:checked')) {
+                if (msgEl) {
+                    msgEl.innerText = groups[g].getAttribute('data-wa-required');
+                    msgEl.className = 'form-message error';
+                }
+                return;
+            }
+        }
+
         var name = [val(form, 'Name_First'), val(form, 'Name_Middle'), val(form, 'Name_Last')].filter(Boolean).join(' ');
         var lines = ['*' + (form.getAttribute('data-whatsapp') || 'New enquiry from TaxBridge website') + '*', ''];
         if (name) lines.push('*Name:* ' + name);
         if (val(form, 'Email')) lines.push('*Email:* ' + val(form, 'Email'));
         if (val(form, 'PhoneNumber_countrycode')) lines.push('*Phone:* ' + val(form, 'PhoneNumber_countrycode'));
         if (val(form, 'Dropdown')) lines.push('*Service:* ' + val(form, 'Dropdown'));
+        // Extra labelled fields (selects, inputs, checkbox groups) marked with data-wa-label
+        form.querySelectorAll('[data-wa-label]').forEach(function (el) {
+            var v;
+            if (el.tagName === 'FIELDSET') {
+                v = Array.prototype.map.call(el.querySelectorAll('input:checked'), function (i) { return i.value; }).join(', ');
+            } else if (el.tagName === 'SELECT') {
+                v = el.value ? el.options[el.selectedIndex].text.trim() : '';
+            } else {
+                v = (el.value || '').trim();
+            }
+            if (v) lines.push('*' + el.getAttribute('data-wa-label') + ':* ' + v);
+        });
         if (val(form, 'MultiLine')) lines.push('*Message:* ' + val(form, 'MultiLine'));
         if (document.title) lines.push('', '_Sent from: ' + document.title + '_');
 
