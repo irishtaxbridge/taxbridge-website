@@ -111,7 +111,7 @@
                                 <label class="chip"><input type="checkbox" name="Claims" value="Rent"><span>Rent</span></label>
                                 <label class="chip"><input type="checkbox" name="Claims" value="Medical / dental"><span>Medical / dental</span></label>
                                 <label class="chip"><input type="checkbox" name="Claims" value="Worked from home"><span>Worked from home</span></label>
-                                <label class="chip"><input type="checkbox" name="Claims" value="College fees"><span>College fees</span></label>
+                                <label class="chip"><input type="checkbox" name="Claims" value="Family support"><span>Family support</span></label>
                                 <label class="chip"><input type="checkbox" name="Claims" value="Tuition fees"><span>Tuition fees</span></label>
                                 <label class="chip"><input type="checkbox" name="Claims" value="Not sure"><span>Not sure</span></label>
                             </div>
@@ -240,9 +240,14 @@
             <span class="testimonials-label">Client testimonials</span>
             <h2 class="testimonials-title">What our clients say</h2>
         </div>
-        <div class="feedback-bar">
-            <div class="feedback-track" id="feedbackTrack"></div>
+        <div class="container feedback-wrap">
+            <button type="button" class="feedback-nav prev" id="feedbackPrev" aria-label="Previous reviews"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="feedback-bar" id="feedbackBar" tabindex="0" aria-label="Client reviews. Scroll sideways to read more.">
+                <div class="feedback-track" id="feedbackTrack"></div>
+            </div>
+            <button type="button" class="feedback-nav next" id="feedbackNext" aria-label="Next reviews"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
+        <p class="feedback-hint"><i class="fa-solid fa-hand-pointer"></i> Swipe or use the arrows to read all reviews</p>
         <div class="container">
             <div class="review-form-wrapper">
                 <h3 class="review-form-title">Share your experience</h3>
@@ -295,12 +300,32 @@
             var all = DEFAULT_REVIEWS.concat(stored);
             var track = document.getElementById('feedbackTrack');
             if (!track) return;
-            var html = all.concat(all).map(cardHtml).join('');
-            track.innerHTML = html;
-            // Reset animation so new cards animate from start
-            track.style.animation = 'none';
-            track.offsetHeight;
-            track.style.animation = '';
+            track.innerHTML = all.map(cardHtml).join('');
+            updateArrows();
+        }
+
+        // Manual scrolling: swipe / trackpad / arrow buttons
+        var bar = document.getElementById('feedbackBar');
+        var prevBtn = document.getElementById('feedbackPrev');
+        var nextBtn = document.getElementById('feedbackNext');
+
+        function step() {
+            var card = bar && bar.querySelector('.feedback-card');
+            return card ? card.offsetWidth + 24 : 300;
+        }
+
+        function updateArrows() {
+            if (!bar || !prevBtn || !nextBtn) return;
+            var max = bar.scrollWidth - bar.clientWidth - 2;
+            prevBtn.disabled = bar.scrollLeft <= 2;
+            nextBtn.disabled = bar.scrollLeft >= max;
+        }
+
+        if (bar) {
+            prevBtn.addEventListener('click', function () { bar.scrollBy({ left: -step(), behavior: 'smooth' }); });
+            nextBtn.addEventListener('click', function () { bar.scrollBy({ left: step(), behavior: 'smooth' }); });
+            bar.addEventListener('scroll', updateArrows, { passive: true });
+            window.addEventListener('resize', updateArrows);
         }
 
         // Star picker
@@ -338,6 +363,7 @@
                 reviews.push({ stars: selectedStars, quote: message, author: name });
                 localStorage.setItem('taxbridge_reviews', JSON.stringify(reviews));
                 renderTrack();
+                if (bar) bar.scrollTo({ left: bar.scrollWidth, behavior: 'smooth' });
                 form.reset();
                 selectedStars = 0;
                 if (starPicker) starPicker.querySelectorAll('.star-btn').forEach(function (b) { b.classList.remove('active'); });
@@ -371,9 +397,6 @@
                         <span class="ci-icon"><i class="fa-regular fa-envelope"></i></span>
                         <div><small>Email</small><span>info@taxbridge.ie</span></div>
                     </a>
-                </div>
-                <div class="contact-photo">
-                    <img src="images/handshake.jpg" alt="Adviser shaking hands with a client" loading="lazy">
                 </div>
             </div>
             <div class="contact-form-card">
