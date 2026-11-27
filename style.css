@@ -2688,6 +2688,8 @@ body { overflow-wrap: break-word; }
 .ps-tabs { display: flex; gap: 4px; padding: 4px; margin-bottom: 22px; background: var(--surface-2); border-radius: var(--radius); }
 .ps-tabs button { flex: 1; padding: 10px 8px; border: 0; border-radius: 4px; background: none; color: var(--body); font: 600 0.88rem var(--font-main); cursor: pointer; transition: var(--transition); }
 .ps-tabs button[aria-pressed="true"] { background: var(--btn-bg); color: var(--btn-fg); }
+.ps-tabs button:disabled { opacity: 0.4; cursor: not-allowed; }
+@media (max-width: 420px) { .ps-tabs button { padding: 10px 4px; font-size: 0.8rem; } }
 .ps-more { border-top: 1px solid var(--line); }
 .ps-more summary { padding: 15px 0; color: var(--ink); font-weight: 600; cursor: pointer; }
 .ps-check { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 16px; color: var(--ink); font-size: 0.92rem; cursor: pointer; }
@@ -2727,7 +2729,21 @@ body { overflow-wrap: break-word; }
     .payslip-page section { padding: 0; }
     .payslip-grid { display: block; }
     .ps-c-net, .ps-c-tax, .ps-c-usc, .ps-c-prsi, .ps-c-pension { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    .payslip-page .ps-print-header { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 0 0 14px; margin: 0 0 18px; border-bottom: 2px solid #B08D4F; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    .payslip-page .ps-print-header .tb-logo__cables { stroke: #10362B; }
+    .payslip-page .ps-print-header .tb-logo__deck { fill: #10362B; }
+    .payslip-page .ps-print-header .tb-logo__pylon { fill: #B08D4F; }
+    .payslip-page .ps-print-header .tb-logo__rule { background: #B08D4F; }
+    .payslip-page .ps-print-header .tb-logo__tax { color: #B08D4F; }
+    .payslip-page .ps-print-header .tb-logo__bridge { color: #10362B; }
+    .ps-print-contact { list-style: none; margin: 0; padding: 0; text-align: right; font-size: 11pt; line-height: 1.6; color: #10362B; }
+    .ps-print-contact i { color: #B08D4F; width: 16px; text-align: center; margin-right: 4px; }
+    /* No page margin = no browser header/footer (URL, date, page numbers); spacing moves inside the page */
+    @page { size: A4; margin: 0; }
+    body.payslip-page { padding: 14mm 14mm 12mm; background: #fff; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+    .payslip-page .ps-print-title { display: block; margin: 0 0 12px; font-family: var(--font-display); font-size: 18pt; color: #10362B; }
 }
+.ps-print-header, .ps-print-title { display: none; }
 
 /* =========================================================
    Site search

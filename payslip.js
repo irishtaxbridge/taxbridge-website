@@ -10,6 +10,14 @@
         2025: { band: 44000, marriedBand: 53000, marriedIncrease: 35000, parentBand: 48000, credit: 2000, parentCredit: 1900, carer: 1950, rentMax: 1000, usc2: 27382, prsi: { start: 0.041, end: 0.042 }, autoEnrol: 0 }
     };
     var PERIODS = { year: 1, month: 12, fortnight: 26, week: 52 };
+    var MAX_HOURS = 168; // hours in a week
+
+    // How many of `per` there are in a year. Hourly pay uses 52 paid weeks a year, as Irish payroll does
+    // (paid holidays and public holidays are paid at the normal hourly rate within those 52 weeks).
+    function periodsPerYear(per, hoursPerWeek) {
+        if (per === 'hour') return hoursPerWeek > 0 && hoursPerWeek <= MAX_HOURS ? hoursPerWeek * 52 : 0;
+        return PERIODS[per];
+    }
     var USC1 = 12012, USC3 = 70044, USC_EXEMPT = 13000, EARNINGS_CAP = 115000, AE_CAP = 80000;
 
     function slice(amount, from, to) { return Math.max(0, Math.min(amount, to) - from); }
@@ -79,7 +87,7 @@
     }
 
     if (typeof module !== 'undefined' && module.exports) {
-        module.exports = { calculate: calculate, grossFromNet: grossFromNet };
+        module.exports = { calculate: calculate, grossFromNet: grossFromNet, periodsPerYear: periodsPerYear };
         return;
     }
 
@@ -109,21 +117,41 @@
             return tr;
         }
 
+        // One "hours per week" field: it sits beside "Paid" for hourly pay, otherwise in the overtime section.
+        var hoursGroup = $('ps-hours-group'), hoursHome = hoursGroup.parentNode, hoursNext = hoursGroup.nextSibling;
+        var hourTab = document.querySelector('[data-ps-view="hour"]');
+        var emptyText = $('ps-empty').innerHTML;
+
         function update() {
-            var status = $('ps-status').value;
+            var status = $('ps-status').value, per = $('ps-per').value, hourly = per === 'hour';
             $('ps-spouse-group').hidden = status !== 'married2';
             $('ps-carer-group').hidden = status !== 'married1';
             $('ps-ae-group').hidden = $('ps-year').value === '2025';
-            $('ps-amount-label').textContent = mode === 'gross' ? 'Gross basic pay (€)' : 'Take-home you want (€)';
+            $('ps-amount-label').textContent = mode === 'gross'
+                ? (hourly ? 'Gross hourly rate (€)' : 'Gross basic pay (€)')
+                : (hourly ? 'Take-home you want per hour (€)' : 'Take-home you want (€)');
+            if (hourly && hoursGroup.parentNode !== $('ps-hours-slot')) $('ps-hours-slot').appendChild(hoursGroup);
+            if (!hourly && hoursGroup.parentNode !== hoursHome) hoursHome.insertBefore(hoursGroup, hoursNext);
+            $('ps-hours-label').textContent = hourly ? 'Hours you work per week (average if they vary)' : 'Contracted hours per week';
 
-            var o = options(), amount = num('ps-amount') * PERIODS[$('ps-per').value];
+            var o = options(), hoursPerYear = periodsPerYear('hour', o.hours);
+            // The Hour view needs a valid number of hours per week
+            hourTab.disabled = !hoursPerYear;
+            if (view === 'hour' && !hoursPerYear) {
+                view = 'month';
+                document.querySelectorAll('[data-ps-view]').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-ps-view') === 'month'); });
+            }
+
+            var amount = num('ps-amount') * periodsPerYear(per, o.hours);
             var valid = amount > 0 && amount <= 5000000;
             $('ps-result').hidden = !valid;
             $('ps-empty').hidden = valid;
+            $('ps-empty').innerHTML = hourly && !hoursPerYear && num('ps-amount') > 0
+                ? 'Enter the hours you work per week (up to ' + MAX_HOURS + ') to see your breakdown.' : emptyText;
             if (!valid) return;
 
             o.basic = mode === 'gross' ? amount : grossFromNet(o, amount);
-            var r = calculate(o), d = PERIODS[view], body = $('ps-rows');
+            var r = calculate(o), d = view === 'hour' ? hoursPerYear : PERIODS[view], body = $('ps-rows');
             var share100 = r.gross || 1;
             function p(v) { return v / d; }
             body.textContent = '';
