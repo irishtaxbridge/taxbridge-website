@@ -12,6 +12,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -34,16 +38,14 @@
 
     <header class="header">
         <div class="container header-container">
-            <a href="index.html" class="logo" aria-label="TaxBridge home">
-                <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 18h20"/><path d="M4 18v-4"/><path d="M20 18v-4"/><path d="M3 14c3-6 15-6 18 0"/><path d="M9 18v-4.5"/><path d="M15 18v-4.5"/><path d="M12 18v-6"/></svg></span>
-                <span class="logo-text"><span class="logo-name">Tax<em>Bridge</em></span><span class="logo-tag">Ireland</span></span>
-            </a>
+            <a class="tb-logo tb-logo-header" href="index.html" aria-label="Tax Bridge home"><svg class="tb-logo__mark" viewBox="6 16 110 88" aria-hidden="true" focusable="false"><path class="tb-logo__cables" d="M29.74 71.09 L44.35 93 M37.14 52.54 L64.11 93 M48.4 37.08 L85.68 93 M62 25.72 L106.85 93" fill="none" stroke-width="4.6" stroke-linecap="round"/><path class="tb-logo__pylon" d="M19.5 97 Q23.8 40.5 69.1 19.3 L70.9 22.7 Q32.2 45.5 32.5 97 Z"/><rect class="tb-logo__deck" x="8" y="91" width="106" height="9" rx="4.5"/></svg><span class="tb-logo__rule" aria-hidden="true"></span><span class="tb-logo__name" aria-hidden="true"><span class="tb-logo__tax">TAX</span><span class="tb-logo__bridge">BRIDGE</span></span></a>
             <nav class="nav">
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="index.html#services" class="nav-link">Services</a></li>
                     <li><a href="index.html#about" class="nav-link">About</a></li>
                     <li><a href="index.html#why-choose-us" class="nav-link">Why Choose Us</a></li>
+                    <li><a href="payslip.html" class="nav-link">Payslip Breakdown</a></li>
                     <li><a href="blog.html" class="nav-link">Blog</a></li>
                     <li><a href="index.html#contact" class="nav-link btn-nav">Contact</a></li>
                 </ul>
@@ -61,6 +63,10 @@
                 <span class="eyebrow">Our services</span>
                 <h1>Tax Refund (Form 12)</h1>
                 <p>PAYE worker or pensioner? We check 2023, 2024, 2025 and 2026, claim every credit and relief you missed and get your money back from Revenue. No refund, no fee.</p>
+                <div class="hero-actions" style="justify-content:center">
+                    <a href="#claim" class="btn btn-gold">Check my refund <i class="fa-solid fa-arrow-down"></i></a>
+                    <a href="#what-we-claim" class="btn btn-ghost-light">What can I claim?</a>
+                </div>
             </div>
         </div>
     </section>
@@ -71,69 +77,7 @@
                 <figure class="detail-photo"><img src="images/form12.jpg" alt="Tax forms with a calculator and pen"></figure>
                 <span class="updated-note"><i class="fa-solid fa-rotate"></i> Updated for Budget 2027</span>
 
-<h2 class="section-title">What is Form 12?</h2>
-<p>Form 12 is the annual income tax return for PAYE employees and pensioners, including people with non-PAYE income
-of less than &euro;5,000 a year. Most PAYE workers assume their employer has everything covered, but many credits and
-reliefs are <strong>only granted if you claim them</strong>, so thousands of euro go unclaimed every year.</p>
-
-<h3 id="what-we-claim">What we can claim for you</h3>
-<p>If you paid for any of these between 2023 and 2026, you are probably owed money back. We claim them all for you.</p>
-<div class="f12-claim-grid f12-claim-grid-2">
-  <div class="f12-claim"><i class="fa-solid fa-house"></i><h4>Rent Tax Credit</h4><p>Paying rent on your home, or your child's college accommodation? Claim up to <strong>&euro;750 for 2023</strong> and <strong>&euro;1,000 for each of 2024, 2025 and 2026</strong>. Couples can claim double.</p></div>
-  <div class="f12-claim"><i class="fa-solid fa-stethoscope"></i><h4>Medical &amp; dental expenses</h4><p>Get <strong>20% back</strong> on GP and consultant fees, prescriptions, physiotherapy, hospital bills and non-routine dental work such as crowns and root canals.</p></div>
-  <div class="f12-claim"><i class="fa-solid fa-laptop-house"></i><h4>Remote working relief</h4><p>Worked from home? Claim <strong>30%</strong> of your electricity, heating and broadband costs for the days you worked at home.</p></div>
-  <div class="f12-claim"><i class="fa-solid fa-user-nurse"></i><h4>Flat-rate job expenses</h4><p>Fixed yearly deductions for many jobs, including <strong>nurses, teachers, retail staff, healthcare workers and tradespeople</strong>.</p></div>
-  <div class="f12-claim"><i class="fa-solid fa-graduation-cap"></i><h4>Tuition fees</h4><p><strong>20% relief</strong> on qualifying college and third-level tuition fees, for yourself or someone you paid for.</p></div>
-  <div class="f12-claim"><i class="fa-solid fa-people-roof"></i><h4>Home Carer Tax Credit</h4><p>For married couples or civil partners where one partner <strong>cares for a child or dependent relative</strong> at home.</p></div>
-</div>
-
-<h3>Which years? We check all four at once</h3>
-<p>You can only go back four years. Once a year's deadline passes, that refund is gone for good.</p>
-<div class="f12-year-grid">
-  <div class="f12-year"><b>2023</b><span>Claim by 31 Dec 2027</span></div>
-  <div class="f12-year"><b>2024</b><span>Claim by 31 Dec 2028</span></div>
-  <div class="f12-year"><b>2025</b><span>Claim by 31 Dec 2029</span></div>
-  <div class="f12-year"><b>2026</b><span>Claim from 1 Jan 2027</span></div>
-</div>
-
-<h3>How it works</h3>
-<div class="process-grid f12-steps">
-  <div class="process-step"><h4>Send your details</h4><p>Fill in the short form below. It opens WhatsApp so you can send it to us in one tap.</p></div>
-  <div class="process-step"><h4>We check 2023 &ndash; 2026</h4><p>We go through your Revenue record and find every credit and relief you missed.</p></div>
-  <div class="process-step"><h4>Revenue pays you</h4><p>We file your Form 12 and the refund goes straight to your bank. No refund, no fee.</p></div>
-</div>
-
-<div class="budget-callout">
-  <span class="bc-label"><i class="fa-solid fa-landmark"></i> Budget 2027 update</span>
-  <h3>What changes for PAYE workers from 1 January 2027</h3>
-  <ul>
-    <li><strong>Personal and Employee (PAYE) tax credits</strong> each rise by &euro;125 to <strong>&euro;2,125</strong>.</li>
-    <li>The <strong>20% standard rate band</strong> rises by &euro;2,500 to <strong>&euro;46,500</strong> for a single person (&euro;55,500 for a married one-income couple).</li>
-    <li>The <strong>2% USC band</strong> now runs up to <strong>&euro;30,300</strong> (up from &euro;28,700).</li>
-    <li>The <strong>Rent Tax Credit</strong> rises to <strong>&euro;1,150</strong> per person (&euro;2,300 for a couple) for 2027 and 2028.</li>
-    <li>The <strong>Home Carer Tax Credit</strong> rises by &euro;100 to &euro;2,050.</li>
-  </ul>
-  <p class="bc-foot">The Government estimates a worker on &euro;50,000 will pay over &euro;700 less in income tax and USC in 2027. <a href="blog-budget-2027.html">Read our full Budget 2027 guide</a></p>
-</div>
-
-<div class="info-box warning">
-  <div class="info-box-title"><i class="fa-solid fa-hourglass-half"></i> Deadline: 31 December 2026</div>
-  <p>Claims for the <strong>2022</strong> tax year close on 31 December 2026. After that, any refund due for 2022 is lost for good. Contact us now if you have not yet reviewed 2022.</p>
-</div>
-
-<h3>Your questions: what can I claim?</h3>
-<div class="f12-faq-list">
-  <details><summary>Can I claim for rent?</summary><p>Yes, if you rented your home or paid rent for your child's student accommodation. The Rent Tax Credit is &euro;750 for 2023 and &euro;1,000 for 2024, 2025 and 2026 per person. Your landlord must be registered with the RTB, or the accommodation must be approved student housing.</p></details>
-  <details><summary>Can I claim for doctor, dentist and pharmacy bills?</summary><p>Yes. You get 20% back on most medical costs not covered by insurance: GP and consultant visits, prescriptions, physiotherapy, hospital stays and non-routine dental work like crowns, root canals and orthodontics. Routine cleanings and fillings don't qualify.</p></details>
-  <details><summary>I worked from home. What can I claim?</summary><p>You can claim 30% of your electricity, heating and broadband bills, divided by the number of days you worked from home. Even a couple of days a week adds up over four years.</p></details>
-  <details><summary>Is there anything I can claim just for my job?</summary><p>Yes. Many jobs have a flat-rate expense that reduces your tax every year, with no receipts needed. Nurses, teachers, shop staff, healthcare workers, cleaners and tradespeople are just some examples. Tell us your job and we'll check.</p></details>
-  <details><summary>Can I claim college fees?</summary><p>Yes. You get 20% relief on qualifying third-level tuition fees, whether you paid for yourself, your child or another person.</p></details>
-  <details><summary>Who can file a Form 12?</summary><p>PAYE employees and pensioners in Ireland, including people with less than &euro;5,000 a year of other income, such as a small rental income.</p></details>
-  <details><summary>What does it cost?</summary><p>Nothing up front. We only charge a fee if we get you a refund, and we tell you the fee before we file anything.</p></details>
-</div>
-
-                <p class="source-note">Figures reflect Budget 2027 as announced on 6 October 2026. Most changes apply from 1 January 2027 and some are subject to the Finance Bill 2026. We will always confirm exactly what applies to you.</p>
-                <div class="f12-inline-form" id="claim">
+                <div class="f12-inline-form f12-inline-form--top" id="claim">
                     <p class="form-card-eyebrow">Free Form 12 refund check &middot; 2023 &ndash; 2026</p>
                     <h3>See what you're owed</h3>
                     <p>Takes 1 minute. No documents needed yet. No refund, no fee.</p>
@@ -187,6 +131,74 @@ reliefs are <strong>only granted if you claim them</strong>, so thousands of eur
                         <div class="form-message"></div>
                     </form>
                 </div>
+
+
+<h2 class="section-title">What is Form 12?</h2>
+<p>Form 12 is the annual income tax return for PAYE employees and pensioners, including people with non-PAYE income
+of less than &euro;5,000 a year. Most PAYE workers assume their employer has everything covered, but many credits and
+reliefs are <strong>only granted if you claim them</strong>, so thousands of euro go unclaimed every year.</p>
+
+<h3 id="what-we-claim">What we can claim for you</h3>
+<p>If you paid for any of these between 2023 and 2026, you are probably owed money back. We claim them all for you. <strong>Tap any credit to see the full details.</strong></p>
+<div class="f12-claim-grid f12-claim-grid-2">
+  <div class="f12-claim f12-claim-btn" role="button" tabindex="0" data-credit="rent" aria-haspopup="dialog"><i class="fa-solid fa-house"></i><h4>Rent Tax Credit</h4><p>Paying rent on your home, or your child's college accommodation? Claim up to <strong>&euro;750 for 2023</strong> and <strong>&euro;1,000 for each of 2024, 2025 and 2026</strong>. Couples can claim double.</p><span class="f12-more">See full details <i class="fa-solid fa-arrow-right"></i></span></div>
+  <div class="f12-claim f12-claim-btn" role="button" tabindex="0" data-credit="medical" aria-haspopup="dialog"><i class="fa-solid fa-stethoscope"></i><h4>Medical &amp; dental expenses</h4><p>Get <strong>20% back</strong> on GP and consultant fees, prescriptions, physiotherapy, hospital bills and non-routine dental work such as crowns and root canals.</p><span class="f12-more">See full details <i class="fa-solid fa-arrow-right"></i></span></div>
+  <div class="f12-claim f12-claim-btn" role="button" tabindex="0" data-credit="remote" aria-haspopup="dialog"><i class="fa-solid fa-laptop-house"></i><h4>Remote working relief</h4><p>Worked from home? Claim <strong>30%</strong> of your electricity, heating and broadband costs for the days you worked at home.</p><span class="f12-more">See full details <i class="fa-solid fa-arrow-right"></i></span></div>
+  <div class="f12-claim f12-claim-btn" role="button" tabindex="0" data-credit="flatrate" aria-haspopup="dialog"><i class="fa-solid fa-user-nurse"></i><h4>Flat-rate job expenses</h4><p>Fixed yearly deductions for many jobs, including <strong>nurses, teachers, retail staff, healthcare workers and tradespeople</strong>.</p><span class="f12-more">See full details <i class="fa-solid fa-arrow-right"></i></span></div>
+  <div class="f12-claim f12-claim-btn" role="button" tabindex="0" data-credit="tuition" aria-haspopup="dialog"><i class="fa-solid fa-graduation-cap"></i><h4>Tuition fees</h4><p><strong>20% relief</strong> on qualifying college and third-level tuition fees, for yourself or someone you paid for.</p><span class="f12-more">See full details <i class="fa-solid fa-arrow-right"></i></span></div>
+  <div class="f12-claim f12-claim-btn" role="button" tabindex="0" data-credit="dependent" aria-haspopup="dialog"><i class="fa-solid fa-hand-holding-heart"></i><h4>Dependent Relative Tax Credit</h4><p>Supporting a relative who <strong>can't look after themselves due to age or illness</strong>, or a widowed parent or in-law? You can claim this credit for each relative you support.</p><span class="f12-more">See full details <i class="fa-solid fa-arrow-right"></i></span></div>
+</div>
+
+<h3>Which years? We check all four at once</h3>
+<p>You can only go back four years. Once a year's deadline passes, that refund is gone for good.</p>
+<div class="f12-year-grid">
+  <div class="f12-year"><b>2023</b><span>Claim by 31 Dec 2027</span></div>
+  <div class="f12-year"><b>2024</b><span>Claim by 31 Dec 2028</span></div>
+  <div class="f12-year"><b>2025</b><span>Claim by 31 Dec 2029</span></div>
+  <div class="f12-year"><b>2026</b><span>Claim from 1 Jan 2027</span></div>
+</div>
+
+<h3>How it works</h3>
+<div class="process-grid f12-steps">
+  <div class="process-step"><h4>Send your details</h4><p>Fill in the short form at the top of this page. It opens WhatsApp so you can send it to us in one tap.</p></div>
+  <div class="process-step"><h4>We check 2023 &ndash; 2026</h4><p>We go through your Revenue record and find every credit and relief you missed.</p></div>
+  <div class="process-step"><h4>Revenue pays you</h4><p>We file your Form 12 and the refund goes straight to your bank. No refund, no fee.</p></div>
+</div>
+
+<div class="budget-callout">
+  <span class="bc-label"><i class="fa-solid fa-landmark"></i> Budget 2027 update</span>
+  <h3>What changes for PAYE workers from 1 January 2027</h3>
+  <ul>
+    <li><strong>Personal and Employee (PAYE) tax credits</strong> each rise by &euro;125 to <strong>&euro;2,125</strong>.</li>
+    <li>The <strong>20% standard rate band</strong> rises by &euro;2,500 to <strong>&euro;46,500</strong> for a single person (&euro;55,500 for a married one-income couple).</li>
+    <li>The <strong>2% USC band</strong> now runs up to <strong>&euro;30,300</strong> (up from &euro;28,700).</li>
+    <li>The <strong>Rent Tax Credit</strong> rises to <strong>&euro;1,150</strong> per person (&euro;2,300 for a couple) for 2027 and 2028.</li>
+    <li>The <strong>Home Carer Tax Credit</strong> rises by &euro;100 to &euro;2,050.</li>
+  </ul>
+  <p class="bc-foot">The Government estimates a worker on &euro;50,000 will pay over &euro;700 less in income tax and USC in 2027. <a href="blog-budget-2027.html">Read our full Budget 2027 guide</a></p>
+</div>
+
+<div class="info-box warning">
+  <div class="info-box-title"><i class="fa-solid fa-hourglass-half"></i> Deadline: 31 December 2026</div>
+  <p>Claims for the <strong>2022</strong> tax year close on 31 December 2026. After that, any refund due for 2022 is lost for good. Contact us now if you have not yet reviewed 2022.</p>
+</div>
+
+<h3>Your questions: what can I claim?</h3>
+<div class="f12-faq-list">
+  <details><summary>Can I claim for rent?</summary><p>Yes, if you rented your home or paid rent for your child's student accommodation. The Rent Tax Credit is &euro;750 for 2023 and &euro;1,000 for 2024, 2025 and 2026 per person. Budget 2027 raises it to &euro;1,150 for 2027, which can be claimed from 1 January 2028. Your landlord must be registered with the RTB, or the accommodation must be approved student housing.</p></details>
+  <details><summary>Can I claim for doctor, dentist and pharmacy bills?</summary><p>Yes. You get 20% back on most medical costs not covered by insurance: GP and consultant visits, prescriptions, physiotherapy, hospital stays and non-routine dental work like crowns, root canals and orthodontics. Routine cleanings and fillings don't qualify.</p></details>
+  <details><summary>I worked from home. What can I claim?</summary><p>You can claim 30% of your electricity, heating and broadband bills, divided by the number of days you worked from home. Even a couple of days a week adds up over four years.</p></details>
+  <details><summary>Is there anything I can claim just for my job?</summary><p>Yes. Many jobs have a flat-rate expense that reduces your tax every year, with no receipts needed. Nurses, teachers, shop staff, healthcare workers, cleaners and tradespeople are just some examples. Tell us your job and we'll check.</p></details>
+  <details><summary>Can I claim college fees?</summary><p>Yes. You get 20% relief on qualifying third-level tuition fees, whether you paid for yourself, your child or another person.</p></details>
+  <details><summary>Who can file a Form 12?</summary><p>PAYE employees and pensioners in Ireland, including people with less than &euro;5,000 a year of other income, such as a small rental income.</p></details>
+  <details><summary>What does it cost?</summary><p>Nothing up front. We only charge a fee if we get you a refund, and we tell you the fee before we file anything.</p></details>
+</div>
+
+                <p class="source-note">Figures reflect Budget 2027 as announced on 6 October 2026. Most changes apply from 1 January 2027 and some are subject to the Finance Bill 2026. We will always confirm exactly what applies to you.</p>
+                <div class="f12-bottom-cta">
+                    <p>Ready to see what Revenue owes you? It only takes a minute.</p>
+                    <a href="#claim" class="btn btn-primary"><i class="fa-solid fa-arrow-up"></i> Claim my money back</a>
+                </div>
             </div>
         </div>
     </section>
@@ -195,10 +207,7 @@ reliefs are <strong>only granted if you claim them</strong>, so thousands of eur
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <a href="index.html" class="logo" aria-label="TaxBridge home">
-                        <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 18h20"/><path d="M4 18v-4"/><path d="M20 18v-4"/><path d="M3 14c3-6 15-6 18 0"/><path d="M9 18v-4.5"/><path d="M15 18v-4.5"/><path d="M12 18v-6"/></svg></span>
-                        <span class="logo-text"><span class="logo-name">Tax<em>Bridge</em></span><span class="logo-tag">Ireland</span></span>
-                    </a>
+                    <a class="tb-logo tb-logo--dark" href="index.html" aria-label="Tax Bridge home"><svg class="tb-logo__mark" viewBox="6 16 110 88" aria-hidden="true" focusable="false"><path class="tb-logo__cables" d="M29.74 71.09 L44.35 93 M37.14 52.54 L64.11 93 M48.4 37.08 L85.68 93 M62 25.72 L106.85 93" fill="none" stroke-width="4.6" stroke-linecap="round"/><path class="tb-logo__pylon" d="M19.5 97 Q23.8 40.5 69.1 19.3 L70.9 22.7 Q32.2 45.5 32.5 97 Z"/><rect class="tb-logo__deck" x="8" y="91" width="106" height="9" rx="4.5"/></svg><span class="tb-logo__rule" aria-hidden="true"></span><span class="tb-logo__name" aria-hidden="true"><span class="tb-logo__tax">TAX</span><span class="tb-logo__bridge">BRIDGE</span></span></a>
                     <p class="footer-about">Smart tax solutions for individuals and businesses across Ireland.</p>
                 </div>
                 <div class="footer-col">
@@ -210,6 +219,7 @@ reliefs are <strong>only granted if you claim them</strong>, so thousands of eur
                         <li><a href="payroll.html">PAYE &amp; Payroll</a></li>
                         <li><a href="vat.html">VAT</a></li>
                         <li><a href="startup.html">Start-Up Advice</a></li>
+                        <li><a href="payslip.html">Payslip Breakdown</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -240,6 +250,202 @@ reliefs are <strong>only granted if you claim them</strong>, so thousands of eur
         </div>
     </footer>
 
+    <dialog class="credit-modal" id="creditModal" aria-labelledby="creditModalTitle">
+        <button type="button" class="credit-modal-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+        <div class="credit-modal-body"></div>
+        <div class="credit-modal-foot">
+            <a href="#claim" class="btn btn-primary credit-modal-cta">Check my refund</a>        </div>
+    </dialog>
+
+    <template id="credit-rent">
+        <i class="fa-solid fa-house credit-modal-icon"></i>
+        <h3 id="creditModalTitle">Rent Tax Credit</h3>
+        <p>A tax credit for people who pay rent on the home they live in, or who pay rent for their child's college accommodation.</p>
+        <h4>How much can you get?</h4>
+        <table class="credit-table">
+            <thead><tr><th>Tax year</th><th>Per person</th><th>Jointly assessed couple</th></tr></thead>
+            <tbody>
+                <tr><td>2023</td><td>&euro;750</td><td>&euro;1,500</td></tr>
+                <tr><td>2024</td><td>&euro;1,000</td><td>&euro;2,000</td></tr>
+                <tr><td>2025</td><td>&euro;1,000</td><td>&euro;2,000</td></tr>
+                <tr><td>2026</td><td>&euro;1,000</td><td>&euro;2,000</td></tr>
+                <tr class="is-new"><td>2027 <span class="credit-badge">Budget 2027</span></td><td>&euro;1,150</td><td>&euro;2,300</td></tr>
+            </tbody>
+        </table>
+        <div class="credit-note"><i class="fa-solid fa-calendar-day"></i><p><strong>New for 2027:</strong> Budget 2027 raises the credit to <strong>&euro;1,150 per person</strong> (&euro;2,300 for a jointly assessed couple). This is for rent paid during 2027, so we can only claim the 2027 amount for you <strong>from 1 January 2028</strong>, once the 2027 tax year has ended. For 2023 to 2026, we can claim for you right now.</p></div>
+        <h4>Who qualifies?</h4>
+        <ul>
+            <li>You pay rent for your main home, and the tenancy is registered with the Residential Tenancies Board (RTB).</li>
+            <li>You rent a room or digs in someone else's home under a rent-a-room arrangement.</li>
+            <li>You pay rent for your child's student accommodation while they attend an approved course.</li>
+        </ul>
+        <h4>Good to know</h4>
+        <ul>
+            <li>The credit can't be more than 20% of the rent you actually paid.</li>
+            <li>You can't claim if you rent from a parent or your child, or if your rent is paid through HAP or another State housing support.</li>
+            <li>You'll need your landlord's name, address and RTB number (if registered), and how much rent you paid each year.</li>
+        </ul>
+    </template>
+
+    <template id="credit-medical">
+        <i class="fa-solid fa-stethoscope credit-modal-icon"></i>
+        <h3 id="creditModalTitle">Medical &amp; dental expenses</h3>
+        <p>Get tax back on health costs you paid for yourself, a family member or anyone else, as long as you paid the bill.</p>
+        <div class="credit-stat-row">
+            <div><b>20%</b><span>back on most health expenses</span></div>
+            <div><b>40%</b><span>back on nursing home fees (higher-rate taxpayers)</span></div>
+        </div>
+        <h4>What you can claim</h4>
+        <ul>
+            <li>GP and consultant fees</li>
+            <li>Prescription medicines</li>
+            <li>Physiotherapy and similar treatment prescribed by a doctor</li>
+            <li>Hospital stays and procedures</li>
+            <li>Non-routine dental work: crowns, root canals, bridges, orthodontics, veneers and more</li>
+            <li>Nursing home fees</li>
+        </ul>
+        <h4>Good to know</h4>
+        <ul>
+            <li>Routine dental care such as cleaning, scaling and fillings does not qualify.</li>
+            <li>You can only claim the part that wasn't paid back by health insurance, the HSE or anyone else.</li>
+            <li>The relief is a refund of tax, so you must have paid tax in that year.</li>
+            <li>Keep your receipts for six years. You don't need to send them, but Revenue may ask to see them.</li>
+        </ul>
+        <p class="credit-unchanged"><i class="fa-solid fa-circle-info"></i> No change in Budget 2027.</p>
+    </template>
+
+    <template id="credit-remote">
+        <i class="fa-solid fa-laptop-house credit-modal-icon"></i>
+        <h3 id="creditModalTitle">Remote working relief</h3>
+        <p>If you worked from home for your employer, you can claim tax relief on part of your household bills.</p>
+        <h4>What you can claim</h4>
+        <p><strong>30%</strong> of your electricity, heating and broadband costs, for the days you worked from home. The relief is given at your highest rate of tax.</p>
+        <div class="credit-note"><i class="fa-solid fa-calculator"></i><p><strong>How Revenue works it out:</strong> (yearly bills &times; days worked from home &divide; days in the year &minus; any allowance from your employer) &times; 30%.</p></div>
+        <h4>Good to know</h4>
+        <ul>
+            <li>Only count the days you actually worked from home. Weekends, bank holidays, annual leave and evenings when you brought work home don't count.</li>
+            <li>If you share the bills, each person can claim based on the share they paid.</li>
+            <li>If your employer already paid you a remote working allowance, that amount is taken off first.</li>
+            <li>Keep your utility bills for six years.</li>
+        </ul>
+        <p class="credit-unchanged"><i class="fa-solid fa-circle-info"></i> No change in Budget 2027.</p>
+    </template>
+
+    <template id="credit-flatrate">
+        <i class="fa-solid fa-user-nurse credit-modal-icon"></i>
+        <h3 id="creditModalTitle">Flat-rate job expenses</h3>
+        <p>Many jobs come with a fixed yearly expense allowance agreed with Revenue. It covers things like uniforms, tools, equipment or professional fees that you pay for yourself.</p>
+        <h4>Who can claim?</h4>
+        <p>Hundreds of jobs qualify, including:</p>
+        <ul class="credit-cols">
+            <li>Nurses and midwives</li>
+            <li>Healthcare assistants</li>
+            <li>Teachers and lecturers</li>
+            <li>Shop and retail staff</li>
+            <li>Carpenters, electricians, plumbers</li>
+            <li>Cleaners and hospitality staff</li>
+            <li>Security staff</li>
+            <li>Engineers, drivers and many more</li>
+        </ul>
+        <h4>Good to know</h4>
+        <ul>
+            <li>No receipts are needed. Revenue sets the amount for each job.</li>
+            <li>It reduces your taxable income, so you get relief at your highest rate of tax.</li>
+            <li>If you never claimed it, we can claim it back for up to four years.</li>
+            <li>Tell us your exact job title and we'll check the amount that applies to you.</li>
+        </ul>
+        <p class="credit-unchanged"><i class="fa-solid fa-circle-info"></i> No change in Budget 2027.</p>
+    </template>
+
+    <template id="credit-tuition">
+        <i class="fa-solid fa-graduation-cap credit-modal-icon"></i>
+        <h3 id="creditModalTitle">Tuition fees</h3>
+        <p>Tax relief on third-level fees you paid for an approved course, for yourself or for anyone else such as your child.</p>
+        <div class="credit-stat-row">
+            <div><b>20%</b><span>relief on qualifying fees</span></div>
+            <div><b>&euro;7,000</b><span>max fee per person, per course, per year</span></div>
+        </div>
+        <h4>The first part of the fees isn't covered</h4>
+        <table class="credit-table">
+            <thead><tr><th>Tax year</th><th>Full-time</th><th>Part-time</th></tr></thead>
+            <tbody>
+                <tr><td>2023 &ndash; 2025</td><td>First &euro;3,000</td><td>First &euro;1,500</td></tr>
+                <tr class="is-new"><td>2026 <span class="credit-badge">Budget 2027</span></td><td>First &euro;2,350</td><td>First &euro;1,175</td></tr>
+            </tbody>
+        </table>
+        <div class="credit-note"><i class="fa-solid fa-arrow-trend-up"></i><p><strong>Budget 2027 boost:</strong> the part you can't claim is lowered to match the Student Contribution Fee, so <strong>more of your 2026 fees qualify</strong>. This applies back to 2026 once the Finance Act 2026 is passed.</p></div>
+        <h4>Good to know</h4>
+        <ul>
+            <li>The Student Contribution counts as a qualifying fee.</li>
+            <li>Registration, administration, sports and student centre levies don't qualify.</li>
+            <li>The course and college must be approved by Revenue. All publicly funded Irish universities and institutes are approved.</li>
+        </ul>
+    </template>
+
+    <template id="credit-dependent">
+        <i class="fa-solid fa-hand-holding-heart credit-modal-icon"></i>
+        <h3 id="creditModalTitle">Dependent Relative Tax Credit</h3>
+        <p>A tax credit for people who support a relative financially.</p>
+        <h4>How much can you get?</h4>
+        <table class="credit-table">
+            <thead><tr><th>Tax year</th><th>Credit</th><th>Relative's income limit</th></tr></thead>
+            <tbody>
+                <tr><td>2023 &ndash; 2024</td><td>&euro;245</td><td>Set by Revenue each year</td></tr>
+                <tr><td>2025</td><td>&euro;305</td><td>&euro;18,028</td></tr>
+                <tr><td>2026</td><td>&euro;305</td><td>&euro;18,548</td></tr>
+            </tbody>
+        </table>
+        <h4>Who can you claim for?</h4>
+        <ul>
+            <li>A relative of yours, or of your spouse or civil partner, who can't look after themselves because of old age or illness.</li>
+            <li>Your widowed mother or father, or a parent who is a surviving civil partner, whether or not they are ill.</li>
+            <li>Your son or daughter who lives with you, if you depend on them to care for you because of your old age or illness.</li>
+        </ul>
+        <h4>Good to know</h4>
+        <ul>
+            <li>All of the relative's income counts towards the limit, including social welfare, pensions and deposit interest.</li>
+            <li>The relative doesn't have to live in Ireland, unless you're claiming for a son or daughter who cares for you.</li>
+            <li>You can claim for each relative you support. If several people support the same relative, the credit is shared between them.</li>
+        </ul>
+        <p class="credit-unchanged"><i class="fa-solid fa-circle-info"></i> No change in Budget 2027.</p>
+    </template>
+
+    <script>
+    (function () {
+        var modal = document.getElementById('creditModal');
+        if (!modal || typeof modal.showModal !== 'function') return;
+        var body = modal.querySelector('.credit-modal-body');
+        var lastTrigger = null;
+        function openCredit(key, trigger) {
+            var tpl = document.getElementById('credit-' + key);
+            if (!tpl) return;
+            body.innerHTML = '';
+            body.appendChild(tpl.content.cloneNode(true));
+            lastTrigger = trigger;
+            modal.showModal();
+            body.scrollTop = 0;
+            document.documentElement.classList.add('modal-open');
+        }
+        document.querySelectorAll('.f12-claim-btn').forEach(function (card) {
+            card.addEventListener('click', function () { openCredit(card.getAttribute('data-credit'), card); });
+            card.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openCredit(card.getAttribute('data-credit'), card); }
+            });
+        });
+        var goingToForm = false;
+        modal.querySelector('.credit-modal-close').addEventListener('click', function () { modal.close(); });
+        modal.querySelector('.credit-modal-cta').addEventListener('click', function () { goingToForm = true; modal.close(); });
+        modal.addEventListener('click', function (e) { if (e.target === modal) modal.close(); });
+        modal.addEventListener('close', function () {
+            document.documentElement.classList.remove('modal-open');
+            if (lastTrigger && !goingToForm) lastTrigger.focus({ preventScroll: true });
+            goingToForm = false;
+        });
+    })();
+    </script>
+
+    <script src="search-index.js"></script>
+    <script src="search.js"></script>
     <script src="script.js"></script>
 </body>
 

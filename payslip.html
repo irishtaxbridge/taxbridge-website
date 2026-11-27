@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payslip Breakdown Calculator 2026 &amp; 2027 | TaxBridge Ireland</title>
+    <meta name="description"
+        content="Free Irish payslip calculator. See your income tax, USC, PRSI, pension and take-home pay for 2025, 2026 and 2027.">
+    <script src="theme.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="payslip-page">
+
+    <div class="topbar">
+        <div class="container topbar-inner">
+            <span class="topbar-note"><i class="fa-solid fa-landmark"></i> Budget 2027: <a href="blog-budget-2027.html">see what has changed for you</a></span>
+            <div class="topbar-links">
+                <a href="tel:+353899777898"><i class="fa-solid fa-phone"></i> +353 89 977 7898</a>
+                <a href="https://wa.me/353899777898" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                <a href="mailto:info@taxbridge.ie" class="tb-email"><i class="fa-regular fa-envelope"></i> info@taxbridge.ie</a>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <header class="header">
+        <div class="container header-container">
+            <a class="tb-logo tb-logo-header" href="index.html" aria-label="Tax Bridge home"><svg class="tb-logo__mark" viewBox="6 16 110 88" aria-hidden="true" focusable="false"><path class="tb-logo__cables" d="M29.74 71.09 L44.35 93 M37.14 52.54 L64.11 93 M48.4 37.08 L85.68 93 M62 25.72 L106.85 93" fill="none" stroke-width="4.6" stroke-linecap="round"/><path class="tb-logo__pylon" d="M19.5 97 Q23.8 40.5 69.1 19.3 L70.9 22.7 Q32.2 45.5 32.5 97 Z"/><rect class="tb-logo__deck" x="8" y="91" width="106" height="9" rx="4.5"/></svg><span class="tb-logo__rule" aria-hidden="true"></span><span class="tb-logo__name" aria-hidden="true"><span class="tb-logo__tax">TAX</span><span class="tb-logo__bridge">BRIDGE</span></span></a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#services" class="nav-link">Services</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#why-choose-us" class="nav-link">Why Choose Us</a></li>
+                    <li><a href="payslip.html" class="nav-link active">Payslip Breakdown</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="index.html#contact" class="nav-link btn-nav">Contact</a></li>
+                </ul>
+                <div class="header-actions">
+                    <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Dark mode" title="Switch to dark mode"><span class="tt-track"><i class="fa-solid fa-sun tt-sun" aria-hidden="true"></i><i class="fa-solid fa-moon tt-moon" aria-hidden="true"></i><span class="tt-knob"></span></span></button>
+                    <button class="mobile-menu-btn" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero page-hero" style="--photo:url(images/payroll.jpg)">
+        <div class="container"><div class="hero-content">
+            <span class="eyebrow">Free calculator</span>
+            <h1>Payslip Breakdown</h1>
+            <p>See where your pay goes: income tax, USC, PRSI, pension and your take-home pay, updated for Budget 2027.</p>
+        </div></div>
+    </section>
+
+    <section class="services"><div class="container">
+        <div class="payslip-grid">
+        <div class="ps-card ps-form-card">
+            <h2>Your pay</h2>
+            <div class="ps-tabs" role="group" aria-label="Calculation type">
+                <button type="button" data-ps-mode="gross" aria-pressed="true">Gross to take-home</button>
+                <button type="button" data-ps-mode="net" aria-pressed="false">Take-home to gross</button>
+            </div>
+            <form id="payslip-form" autocomplete="off" novalidate>
+<div class="form-row"><div class="form-group" id="ps-amount-group"><label for="ps-amount"><span id="ps-amount-label">Gross basic pay (&euro;)</span></label><input type="number" id="ps-amount" min="0" step="any" inputmode="decimal" value="45000"></div>
+<div class="form-group" id="ps-per-group"><label for="ps-per">Paid</label><select id="ps-per"><option value="year" selected>Per year</option><option value="month">Per month</option><option value="fortnight">Per fortnight</option><option value="week">Per week</option></select></div></div>
+<div class="form-row"><div class="form-group" id="ps-year-group"><label for="ps-year">Tax year</label><select id="ps-year"><option value="2027">2027 (provisional)</option><option value="2026" selected>2026</option><option value="2025">2025</option></select></div>
+<div class="form-group" id="ps-prsi-group"><label for="ps-prsi">PRSI rate</label><select id="ps-prsi"><option value="average" selected>Full-year average</option><option value="start">January to September</option><option value="end">October to December</option></select></div></div>
+<div class="form-group" id="ps-status-group"><label for="ps-status">Family status</label><select id="ps-status"><option value="single" selected>Single</option><option value="parent">Single parent (child carer credit)</option><option value="married1">Married or civil partners, one income</option><option value="married2">Married or civil partners, two incomes</option></select></div>
+<div class="form-group" id="ps-spouse-group"><label for="ps-spouse">Spouse's gross income per year (&euro;)</label><input type="number" id="ps-spouse" min="0" step="any" inputmode="decimal" placeholder="0"></div>
+<div id="ps-carer-group"><label class="ps-check"><input type="checkbox" id="ps-carer"> <span>I qualify for the Home Carer Tax Credit</span></label></div>
+<details class="ps-more"><summary>Overtime, bonus and benefits</summary>
+<div class="form-row"><div class="form-group" id="ps-hours-group"><label for="ps-hours">Contracted hours per week</label><input type="number" id="ps-hours" min="0" step="any" inputmode="decimal" value="39"></div>
+<div class="form-group" id="ps-bonus-group"><label for="ps-bonus">Bonus or commission per year (&euro;)</label><input type="number" id="ps-bonus" min="0" step="any" inputmode="decimal" placeholder="0"></div></div>
+<div class="form-row"><div class="form-group" id="ps-othours-group"><label for="ps-othours">Overtime hours per week</label><input type="number" id="ps-othours" min="0" step="any" inputmode="decimal" placeholder="0"></div>
+<div class="form-group" id="ps-otrate-group"><label for="ps-otrate">Overtime multiplier</label><input type="number" id="ps-otrate" min="0" step="any" inputmode="decimal" value="1.5"></div></div>
+<div class="form-group" id="ps-bik-group"><label for="ps-bik">Taxable benefits in kind per year (&euro;)</label><input type="number" id="ps-bik" min="0" step="any" inputmode="decimal" placeholder="0"></div>
+</details>
+<details class="ps-more"><summary>Pension</summary>
+<div class="form-row"><div class="form-group" id="ps-ptype-group"><label for="ps-ptype">Contribution type</label><select id="ps-ptype"><option value="percent">% of gross pay</option><option value="fixed">Fixed &euro; per year</option></select></div>
+<div class="form-group" id="ps-pension-group"><label for="ps-pension">Your contribution</label><input type="number" id="ps-pension" min="0" step="any" inputmode="decimal" placeholder="0"></div></div>
+<div class="form-group" id="ps-age-group"><label for="ps-age">Your age (sets the tax relief limit)</label><select id="ps-age"><option value="0.15">Under 30 (15%)</option><option value="0.2">30 to 39 (20%)</option><option value="0.25">40 to 49 (25%)</option><option value="0.3">50 to 54 (30%)</option><option value="0.35">55 to 59 (35%)</option><option value="0.4">60 or over (40%)</option></select></div>
+<div id="ps-ae-group"><label class="ps-check"><input type="checkbox" id="ps-ae"> <span>I am in the auto-enrolment pension (1.5%)</span></label></div>
+</details>
+<details class="ps-more"><summary>Rent credit and medical card</summary>
+<div class="form-group" id="ps-rent-group"><label for="ps-rent">Rent you pay per month (&euro;), if you qualify for the Rent Tax Credit</label><input type="number" id="ps-rent" min="0" step="any" inputmode="decimal" placeholder="0"></div>
+<div id="ps-medical-group"><label class="ps-check"><input type="checkbox" id="ps-medical"> <span>I have a full medical card (reduced USC)</span></label></div>
+</details>
+<div class="ps-actions"><button type="reset" class="btn">Reset</button></div>
+            </form>
+        </div>
+        <div class="ps-card ps-result-card">
+            <h2>Your payslip</h2>
+            <div class="ps-tabs" role="group" aria-label="Show amounts per">
+                <button type="button" data-ps-view="year" aria-pressed="false">Year</button>
+                <button type="button" data-ps-view="month" aria-pressed="true">Month</button>
+                <button type="button" data-ps-view="fortnight" aria-pressed="false">Fortnight</button>
+                <button type="button" data-ps-view="week" aria-pressed="false">Week</button>
+            </div>
+            <p id="ps-empty">Enter your pay, up to &euro;5 million a year, to see your breakdown.</p>
+            <div id="ps-result" hidden>
+                <div class="ps-headline" aria-live="polite"><span id="ps-net-label"></span><b id="ps-net"></b><span id="ps-net-sub"></span></div>
+                <div class="ps-bar" aria-hidden="true"><span class="ps-c-net" id="ps-bar-net"></span><span class="ps-c-tax" id="ps-bar-tax"></span><span class="ps-c-usc" id="ps-bar-usc"></span><span class="ps-c-prsi" id="ps-bar-prsi"></span><span class="ps-c-pension" id="ps-bar-pension"></span></div>
+                <div class="ps-key"><span><i class="ps-c-net"></i>Take-home <span id="ps-key-net"></span></span><span><i class="ps-c-tax"></i>Income tax <span id="ps-key-tax"></span></span><span><i class="ps-c-usc"></i>USC <span id="ps-key-usc"></span></span><span><i class="ps-c-prsi"></i>PRSI <span id="ps-key-prsi"></span></span><span><i class="ps-c-pension"></i>Pension <span id="ps-key-pension"></span></span></div>
+                <table class="ps-table"><tbody id="ps-rows"></tbody></table>
+                <div class="ps-stats"><div><b id="ps-rate"></b>of gross pay goes on tax, USC and PRSI</div><div><b id="ps-marginal"></b>kept from your next &euro;100 of basic pay</div></div>
+                <p class="ps-compare" id="ps-compare"></p>
+                <p class="ps-notes" id="ps-notes"></p>
+                <div class="ps-actions"><button type="button" class="btn" id="ps-print"><i class="fa-solid fa-print"></i> Print or save PDF</button></div>
+            </div>
+        </div>
+        </div>
+        <div class="service-detail-content ps-info">
+            <h2 class="section-title">What the lines on your payslip mean</h2>
+            <ul class="check-list">
+                <li><strong>Income tax (PAYE):</strong> 20% up to your standard rate band, 40% above it, less your tax credits.</li>
+                <li><strong>USC:</strong> a separate charge at 0.5%, 2%, 3% and 8%. You pay none if your income is &euro;13,000 or less.</li>
+                <li><strong>PRSI:</strong> social insurance. The employee Class A rate is 4.35% from 1 October 2026 and is due to rise to 4.5% on 1 October 2027.</li>
+                <li><strong>Pension:</strong> workplace contributions reduce income tax within age limits, but not USC or PRSI. Auto-enrolment contributions do not get tax relief.</li>
+            </ul>
+            <p class="source-note">Estimate only, not tax advice. 2027 figures are provisional and subject to the Finance Bill 2026 and Social Welfare Bill; the 2027 single-parent credit is assumed to stay at &euro;1,900. Assumes one job for a full year, PRSI Class A, under age 65, standard PAYE credits, and that any unused spouse band and credit is moved to you. Amounts are spread evenly over the year, so a payslip with a bonus or emergency tax will differ. Medical insurance relief and mortgage interest relief are not included. The amounts you enter are calculated in your browser and are not sent to us.</p>
+            <div class="detail-cta"><a href="form12.html" class="btn btn-primary">Check if you are due a refund <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div>
+    </div></section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a class="tb-logo tb-logo--dark" href="index.html" aria-label="Tax Bridge home"><svg class="tb-logo__mark" viewBox="6 16 110 88" aria-hidden="true" focusable="false"><path class="tb-logo__cables" d="M29.74 71.09 L44.35 93 M37.14 52.54 L64.11 93 M48.4 37.08 L85.68 93 M62 25.72 L106.85 93" fill="none" stroke-width="4.6" stroke-linecap="round"/><path class="tb-logo__pylon" d="M19.5 97 Q23.8 40.5 69.1 19.3 L70.9 22.7 Q32.2 45.5 32.5 97 Z"/><rect class="tb-logo__deck" x="8" y="91" width="106" height="9" rx="4.5"/></svg><span class="tb-logo__rule" aria-hidden="true"></span><span class="tb-logo__name" aria-hidden="true"><span class="tb-logo__tax">TAX</span><span class="tb-logo__bridge">BRIDGE</span></span></a>
+                    <p class="footer-about">Smart tax solutions for individuals and businesses across Ireland.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="form12.html">Tax Refund (Form 12)</a></li>
+                        <li><a href="self-assessment.html">Self-Assessment</a></li>
+                        <li><a href="bookkeeping.html">Bookkeeping</a></li>
+                        <li><a href="payroll.html">PAYE &amp; Payroll</a></li>
+                        <li><a href="vat.html">VAT</a></li>
+                        <li><a href="startup.html">Start-Up Advice</a></li>
+                        <li><a href="payslip.html">Payslip Breakdown</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#why-choose-us">Why Choose Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="https://wa.me/353899777898" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>WhatsApp us</a></li>
+                        <li><a href="tel:+353899777898"><i class="fa-solid fa-phone"></i>+353 89 977 7898</a></li>
+                        <li><a href="mailto:info@taxbridge.ie"><i class="fa-regular fa-envelope"></i>info@taxbridge.ie</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span data-year>2026</span> TaxBridge. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms &amp; Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="payslip.js"></script>
+    <script src="search-index.js"></script>
+    <script src="search.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
